@@ -1,0 +1,26 @@
+{
+  "name": "Qishen Zhou",
+  "title": "Tang Aoqing Young Scholar · Associate Professor",
+  "org": "School of Transportation, Jilin University | Department of Traffic Information Engineering and Control",
+  "org_url": "https://jt.jlu.edu.cn/en/index.htm",
+  "intro": "Ph.D. candidate, Zhejiang University (Intelligent Transportation), 2020/09–present; Visiting Ph.D., ETH Zurich, 2023/11–2024/10; B.S. in Traffic Engineering, Huazhong University of Science and Technology, 2016/09–2020/06; Visiting student, UNSW, 2019/07–2019/08.",
+  "interests": "Data-driven network-wide traffic state estimation, prediction, and reliability.",
+  "links": {
+    "email": "mailto:qishenzhou@intl.zju.edu.cn",
+    "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
+    "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
+    "github": "https://github.com/qishenzhou",
+    "orcid": ""
+  },
+  "notice": [
+    {
+      "title": "Recruiting Graduate Students",
+      "body": "We welcome applications from students interested in transportation planning, intelligent transportation systems, and related areas (M.S. / Ph.D.). Please send your CV and a brief statement of research interests to the email above."
+    }
+  ],
+  "news": [
+    {"date": "2025.02", "title": "Joining Jilin University", "body": "As Tang Aoqing Young Scholar (Associate Professor).","image": "images/news/mogernn.JPG", "children": [{"title": "Position details", "body": "Duties and benefits of the Tang Aoqing Young Scholar position."}, {"title": "Onboarding", "body": "Expected to start in Spring 2025; follow HR notice for exact date."}]},
+    {"date": "2024.12", "title": "Conference presentations", "body": "Conference talks and academic exchange."},
+    {"date": "2024.10", "title": "Returned from ETH Zurich", "body": "Completed visiting Ph.D. at ETH Zurich and returned."}
+  ]
+}

@@ -17,14 +17,30 @@
 
 顶部导航栏可随时点击进入对应详细页；首页下拉可看各板块最新内容，再点「查看更多」进入该板块完整页。语言选择会保存在浏览器中，切换页面后仍保持中/英。
 
-## 如何修改内容
+## 如何修改内容（数据文件维护）
 
-1. **个人信息与简介**：编辑 `index.html` 中「关于」区块的姓名、职称、简介、邮箱；中英两段分别写在两个 `p.about-bio` 里。
-2. **头像**：将个人照片放到同目录，在 `index.html` 里把 `<div class="about-photo">` 改为  
-   `<img class="about-photo" src="你的照片文件名.jpg" alt="姓名" />`，并在 `styles.css` 中为 `.about-photo` 增加 `width: 180px; height: 180px; object-fit: cover; border-radius: 50%;`。
-3. **研究**：首页最新摘要改 `index.html` 中「研究」区块的论文列表；完整列表在 `research.html` 中增删（发表文章 / 研究项目 / 开放资源）。
-4. **学术动态**：首页最新改 `index.html` 中「学术动态」的 timeline 项；完整时间线在 `news.html` 中增删 `.timeline-item`，每项内保留 `lang-zh` / `lang-en` 两段。
-5. **摄影集**：首页最新改 `index.html` 中「摄影集」的格子数量；完整图集在 `gallery.html` 中增删。将 `.gallery-placeholder` 替换为 `<img src="图片路径" alt="描述" />` 即可使用真实图片。
+**所有需要维护的数据文件都放在 `data/` 文件夹**，网站会自动读取，无需改 HTML/JS。详见 **data/README.md**。
+
+### 文件一览（均在 data/ 下）
+
+| 文件 | 用途 |
+|------|------|
+| **papers_eng.bib** / **papers_cn.bib** | 论文（工作概览、文章列表、引用）。扩展字段：abstract、url、code、cover。引用按钮复制英文并去掉扩展字段。 |
+| **activities_ch.json** / **activities_eng.json** | 学术活动。每项：`date`, `title`, `body`。 |
+| **projects_ch.json** / **projects_eng.json** | 研究项目。每项：`title`, `body`。 |
+| **resources_ch.json** / **resources_eng.json** | 开放资源（二级）。每项：`title`, `body`, `link`；可选 **children**（三级，点击后展开）。 |
+| **about_me_ch.json** / **about_me_eng.json** | 关于 + 首页：姓名、职位、单位、各 icon 链接、个人简介、研究兴趣、公告、近期动态（news）。 |
+| **team_ch.json** / **team_eng.json** | 研究团队。每项：`name`, `role`, `desc`；可选 `photo`。空则显示「团队建设中」。 |
+| **gallery_list.json** | 摄影集列表（由脚本根据 gallery/ 生成，见下）。 |
+
+### 摄影集图片
+
+- 将图片放入根目录 **gallery/** 文件夹。
+- 在项目根目录执行：**`node scripts/build-gallery.js`**，会在 **data/** 下生成/更新 **gallery_list.json**。新增或删除图片后重新运行一次即可。
+
+### 其他（仍改页面或样式）
+
+- **个人信息与简介、头像**：编辑 `index.html` 中「关于」区块；头像为 `about_me.jpg` 时已配置好。
 
 ## 语言切换
 

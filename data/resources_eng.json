@@ -1,0 +1,5 @@
+[
+  {"title": "Dataset Name", "body": "Brief description and download info. Add usage, format, citation here.", "link": "", "children": []},
+  {"title": "Code or Tool", "body": "GitHub / open source link and instructions. Add environment, dependencies, examples.", "link": "", "children": []},
+  {"title": "More resources can be added here", "body": "Description and download or access info.", "link": "", "children": [{"title": "Sub-item (level 3)", "body": "Sub-item description, shown when opening the resource.", "link": ""}]}
+]

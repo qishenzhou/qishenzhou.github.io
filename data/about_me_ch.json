@@ -1,0 +1,26 @@
+{
+  "name": "周启申",
+  "title": "唐敖庆青年学者 · 副教授",
+  "org": "吉林大学交通学院｜交通信息工程及控制系",
+  "org_url": "https://jt.jlu.edu.cn/index.htm",
+  "intro": "浙江大学 博士研究生（智能交通所）2020/09–至今；苏黎世联邦理工大学 联合培养博士生 2023/11–2024/10；华中科技大学 交通工程学士（土木工程与水利学院）2016/09–2020/06；新南威尔士大学 访问学生 2019/07–2019/08。",
+  "interests": "数据驱动的大规模路网全域交通状态估计、预测及可信性研究。",
+  "links": {
+      "email": "mailto:qishenzhou@intl.zju.edu.cn",
+      "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
+      "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
+      "github": "https://github.com/qishenzhou",
+      "orcid": ""
+  },
+  "notice": [
+    {
+      "title": "招收研究生",
+      "body": "欢迎对交通规划、智能交通等方向感兴趣的同学报考硕士/博士。请将简历与简要研究兴趣说明发送至上方邮箱。"
+    }
+  ],
+  "news": [
+    {"date": "2025.02", "title": "即将入职吉林大学交通学院", "body": "任唐敖庆青年学者（副教授）。", "children": [{"title": "岗位说明", "body": "唐敖庆青年学者岗位职责与待遇说明。"}, {"title": "报到安排", "body": "预计 2025 年春季到岗，具体以人事处通知为准。"}]},
+    {"date": "2024.12", "title": "参加学术会议并作报告", "body": "会议报告与学术交流。"},
+    {"date": "2024.10", "title": "结束苏黎世联邦理工大学联合培养", "body": "完成苏黎世联邦理工大学联合培养博士生项目回国。"}
+  ]
+}
