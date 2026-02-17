@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>点赞统计（仅站主）</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.25rem; }
+    .unauthorized { color: #c00; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #eee; }
+    .loading { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>论文点赞统计</h1>
+  <p id="message" class="loading">验证中…</p>
+  <div id="content" style="display: none;">
+    <table>
+      <thead><tr><th>论文</th><th>点赞数</th></tr></thead>
+      <tbody id="counts"></tbody>
+    </table>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var key = params.get('key');
+      var secret = typeof window.ADMIN_SECRET !== 'undefined' ? window.ADMIN_SECRET : '';
+      var msg = document.getElementById('message');
+      var content = document.getElementById('content');
+      var tbody = document.getElementById('counts');
+
+      if (!secret || key !== secret) {
+        msg.textContent = '未授权。请使用正确密钥访问，例如：?key=你的密钥';
+        msg.className = 'unauthorized';
+        content.style.display = 'none';
+        return;
+      }
+
+      if (typeof window.FIREBASE_CONFIG !== 'object' || !window.FIREBASE_CONFIG || !window.FIREBASE_CONFIG.databaseURL) {
+        msg.textContent = '未配置 Firebase。请复制 firebase-config.js.example 为 firebase-config.js 并填写配置。';
+        msg.className = 'unauthorized';
+        content.style.display = 'none';
+        return;
+      }
+
+      try {
+        firebase.initializeApp(window.FIREBASE_CONFIG);
+        var db = firebase.database();
+        db.ref('paper_likes').once('value', function (snap) {
+          var val = snap.val() || {};
+          var ids = Object.keys(val).sort(function (a, b) { return Number(a) - Number(b); });
+          msg.style.display = 'none';
+          content.style.display = 'block';
+          tbody.innerHTML = '';
+          if (ids.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="2">暂无数据</td></tr>';
+          } else {
+            ids.forEach(function (id) {
+              var count = typeof val[id] === 'object' && val[id] !== null ? Object.keys(val[id]).length : 0;
+              var tr = document.createElement('tr');
+              tr.innerHTML = '<td>论文 ' + id + '</td><td>' + count + '</td>';
+              tbody.appendChild(tr);
+            });
+          }
+        }, function (err) {
+          msg.textContent = '读取失败：' + (err && err.message ? err.message : '未知错误');
+          msg.className = 'unauthorized';
+        });
+      } catch (e) {
+        msg.textContent = '初始化失败：' + (e.message || e);
+        msg.className = 'unauthorized';
+      }
+    })();
+  </script>
+</body>
+</html>

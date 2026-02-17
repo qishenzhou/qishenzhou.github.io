@@ -1,0 +1,19 @@
+// 复制此文件为 firebase-config.js 并填入你的 Firebase 配置与管理员密钥。
+// 建议将 firebase-config.js 加入 .gitignore，避免把密钥提交到仓库。
+// 在 Firebase 控制台创建项目 → 添加 Web 应用 → 启用 Realtime Database
+// 详见：https://firebase.google.com/docs/database/web/start
+
+(function () {
+  'use strict';
+  window.FIREBASE_CONFIG = {
+    apiKey: '你的-apiKey',
+    authDomain: '你的项目.firebaseapp.com',
+    databaseURL: 'https://你的项目-default-rtdb.firebaseio.com',
+    projectId: '你的项目',
+    storageBucket: '你的项目.appspot.com',
+    messagingSenderId: '数字',
+    appId: '你的-appId'
+  };
+  // 仅你知道的密钥，用于访问 admin.html 查看点赞数（例如：?key=你的密钥）
+  window.ADMIN_SECRET = '请设置一个只有你知道的密钥';
+})();

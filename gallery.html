@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>摄影集 | Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-detail">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html#about" class="nav-link" data-i18n="nav_about">关于</a>
+      <a href="research.html" class="nav-link" data-i18n="nav_research">研究成果</a>
+      <a href="projects.html" class="nav-link" data-i18n="nav_projects">研究项目</a>
+      <a href="team.html" class="nav-link" data-i18n="nav_team">研究团队</a>
+      <a href="activities.html" class="nav-link" data-i18n="nav_activities">学术活动</a>
+      <a href="gallery.html" class="nav-link current" data-i18n="nav_gallery">摄影集</a>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-option active" data-lang="zh">中</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-gallery section-full">
+      <div class="container">
+        <h1 class="section-title page-title" data-i18n="gallery_title">摄影集</h1>
+        <p class="section-intro lang-zh">工作之余的随拍与旅途记录。</p>
+        <p class="section-intro lang-en hidden">Snapshots and travel photos in my spare time.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="0"><img src="https://picsum.photos/seed/g1/500/500" alt="摄影 1" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="1"><img src="https://picsum.photos/seed/g2/500/500" alt="摄影 2" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="2"><img src="https://picsum.photos/seed/g3/500/500" alt="摄影 3" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="3"><img src="https://picsum.photos/seed/g4/500/500" alt="摄影 4" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="4"><img src="https://picsum.photos/seed/g5/500/500" alt="摄影 5" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="5"><img src="https://picsum.photos/seed/g6/500/500" alt="摄影 6" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="6"><img src="https://picsum.photos/seed/g7/500/500" alt="摄影 7" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="7"><img src="https://picsum.photos/seed/g8/500/500" alt="摄影 8" /></div>
+          <div class="gallery-item" data-detail-type="gallery" data-detail-id="8"><img src="https://picsum.photos/seed/g9/500/500" alt="摄影 9" /></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer">© 2025 · 保留所有权利</p>
+    </div>
+  </footer>
+
+  <div id="detail-overlay" class="detail-overlay" aria-hidden="true">
+    <div class="detail-backdrop"></div>
+    <div class="detail-panel detail-panel-gallery">
+      <div id="detail-content" class="detail-content"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

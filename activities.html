@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>学术活动 | Academic Activities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-detail">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html#about" class="nav-link" data-i18n="nav_about">关于</a>
+      <a href="research.html" class="nav-link" data-i18n="nav_research">研究成果</a>
+      <a href="projects.html" class="nav-link" data-i18n="nav_projects">研究项目</a>
+      <a href="team.html" class="nav-link" data-i18n="nav_team">研究团队</a>
+      <a href="activities.html" class="nav-link current" data-i18n="nav_activities">学术活动</a>
+      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">摄影集</a>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-option active" data-lang="zh">中</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-full section-activities">
+      <div class="container">
+        <h1 class="section-title page-title" data-i18n="activities_title">学术活动</h1>
+        <p class="section-intro lang-zh" data-i18n="activities_intro_zh">会议报告、访问交流等学术活动记录。</p>
+        <p class="section-intro lang-en hidden" data-i18n="activities_intro_en">Talks, visits and other academic activities.</p>
+
+        <div class="timeline">
+          <article class="timeline-item detail-item" data-detail-type="activity" data-detail-id="0">
+            <span class="timeline-date">2024.12</span>
+            <div class="timeline-content">
+              <p class="lang-zh">参加某某学术会议并作报告。</p>
+              <p class="lang-en hidden">Presented at XXX conference.</p>
+              <!-- 可选：有图则保留下面 .timeline-image 并改 src，无图则整段删除 -->
+              <div class="timeline-image">
+                <img src="https://picsum.photos/seed/act1/600/300" alt="活动配图" />
+              </div>
+            </div>
+          </article>
+          <article class="timeline-item detail-item" data-detail-type="activity" data-detail-id="1">
+            <span class="timeline-date">2024.08</span>
+            <div class="timeline-content">
+              <p class="lang-zh">在某校进行学术访问。</p>
+              <p class="lang-en hidden">Academic visit at XXX.</p>
+            </div>
+          </article>
+          <article class="timeline-item detail-item" data-detail-type="activity" data-detail-id="2">
+            <span class="timeline-date">2024.05</span>
+            <div class="timeline-content">
+              <p class="lang-zh">更多学术活动可在此持续添加。</p>
+              <p class="lang-en hidden">More academic activities can be added here.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer">© 2025 · 保留所有权利</p>
+    </div>
+  </footer>
+
+  <div id="detail-overlay" class="detail-overlay" aria-hidden="true">
+    <div class="detail-backdrop"></div>
+    <div class="detail-panel">
+      <div id="detail-content" class="detail-content"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+

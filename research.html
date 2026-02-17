@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>研究成果 | Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-detail">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html#about" class="nav-link" data-i18n="nav_about">关于</a>
+      <a href="research.html" class="nav-link current" data-i18n="nav_research">研究成果</a>
+      <a href="projects.html" class="nav-link" data-i18n="nav_projects">研究项目</a>
+      <a href="team.html" class="nav-link" data-i18n="nav_team">研究团队</a>
+      <a href="activities.html" class="nav-link" data-i18n="nav_activities">学术活动</a>
+      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">摄影集</a>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-option active" data-lang="zh">中</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-research section-full">
+      <div class="container">
+        <h1 class="section-title page-title" data-i18n="research_title">研究成果</h1>
+
+        <div class="research-tabs">
+          <button type="button" class="research-tab active" data-tab="papers" data-i18n="tab_papers">工作概览</button>
+          <button type="button" class="research-tab" data-tab="citations" data-i18n="tab_citations">文章列表</button>
+          <button type="button" class="research-tab" data-tab="resources" data-i18n="tab_resources">开放资源</button>
+        </div>
+
+        <div class="research-panel active" id="panel-papers">
+          <ul class="paper-list">
+            <li data-paper-index="0">
+              <div class="paper-header">
+                <strong class="paper-title">论文标题示例 / Example Paper Title</strong>
+                <span class="paper-venue">Journal of Transportation Engineering. · 2024</span>
+              </div>
+              <div class="paper-content">
+                <div class="paper-thumb"><img src="https://picsum.photos/seed/p1/600/340" alt="" /></div>
+                <div class="paper-abstract-wrap">
+                  <p class="paper-abstract lang-zh">此处可填写论文摘要或详细说明。请替换为实际内容。</p>
+                  <p class="paper-abstract lang-en hidden">Abstract or full description can go here. Replace with your content.</p>
+                </div>
+              </div>
+              <div class="paper-actions">
+                <a href="#" class="paper-action" data-paper-index="0" data-action="pdf" aria-label="PDF" title="PDF（全文） / Full text">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_pdf">文件</span>
+                </a>
+                <a href="#" class="paper-action" data-paper-index="0" data-action="code" aria-label="Code" title="代码 / Code repository">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_code">代码</span>
+                </a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="0" aria-label="Cite" data-i18n-title="cite_tooltip" title="复制 BibTeX">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_cite">引用</span>
+                </button>
+                <button type="button" class="paper-action paper-like-btn" data-paper-like-index="0" aria-label="点赞" title="点赞">
+                  <span class="paper-action-icon"><svg class="heart-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg class="heart-filled" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+                  <span class="paper-action-label" data-i18n="paper_like">点赞</span>
+                </button>
+              </div>
+            </li>
+            <li data-paper-index="1">
+              <div class="paper-header">
+                <strong class="paper-title">另一篇论文标题</strong>
+                <span class="paper-venue">Transportation Research Part C. · 2023</span>
+              </div>
+              <div class="paper-content">
+                <div class="paper-thumb"><img src="https://picsum.photos/seed/p2/600/340" alt="" /></div>
+                <div class="paper-abstract-wrap">
+                  <p class="paper-abstract lang-zh">论文摘要或详细说明……</p>
+                  <p class="paper-abstract lang-en hidden">Abstract or description…</p>
+                </div>
+              </div>
+              <div class="paper-actions">
+                <a href="#" class="paper-action" data-paper-index="1" data-action="pdf" aria-label="PDF" title="PDF（全文） / Full text">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_pdf">文件</span>
+                </a>
+                <a href="#" class="paper-action" data-paper-index="1" data-action="code" aria-label="Code" title="代码 / Code repository">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_code">代码</span>
+                </a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="1" aria-label="Cite" data-i18n-title="cite_tooltip" title="复制 BibTeX">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_cite">引用</span>
+                </button>
+                <button type="button" class="paper-action paper-like-btn" data-paper-like-index="1" aria-label="点赞" title="点赞">
+                  <span class="paper-action-icon"><svg class="heart-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg class="heart-filled" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+                  <span class="paper-action-label" data-i18n="paper_like">点赞</span>
+                </button>
+              </div>
+            </li>
+            <li data-paper-index="2">
+              <div class="paper-header">
+                <strong class="paper-title">更多论文可在此持续添加</strong>
+                <span class="paper-venue">Journal name. · 2023</span>
+              </div>
+              <div class="paper-content">
+                <div class="paper-thumb"><img src="https://picsum.photos/seed/p3/600/340" alt="" /></div>
+                <div class="paper-abstract-wrap">
+                  <p class="paper-abstract lang-zh">添加后在此处填写摘要或详情。</p>
+                  <p class="paper-abstract lang-en hidden">Add abstract or details here.</p>
+                </div>
+              </div>
+              <div class="paper-actions">
+                <a href="#" class="paper-action" data-paper-index="2" data-action="pdf" aria-label="PDF">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_pdf">文件</span>
+                </a>
+                <a href="#" class="paper-action" data-paper-index="2" data-action="code" aria-label="Code">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_code">代码</span>
+                </a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="2" aria-label="Cite" data-i18n-title="cite_tooltip">
+                  <span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  <span class="paper-action-label" data-i18n="action_cite">引用</span>
+                </button>
+                <button type="button" class="paper-action paper-like-btn" data-paper-like-index="2" aria-label="点赞" title="点赞">
+                  <span class="paper-action-icon"><svg class="heart-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg class="heart-filled" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+                  <span class="paper-action-label" data-i18n="paper_like">点赞</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="research-panel" id="panel-citations">
+          <ul class="citation-list">
+            <li>
+              <span class="citation-text lang-zh">您的姓名. 论文标题示例 / Example Paper Title. Journal of Transportation Engineering., 2024.</span>
+              <span class="citation-text lang-en hidden">Your Name. Example Paper Title. Journal of Transportation Engineering., 2024.</span>
+              <div class="citation-actions">
+                <a href="#" class="paper-action" data-paper-index="0" data-action="pdf" aria-label="PDF"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_pdf">文件</span></a>
+                <a href="#" class="paper-action" data-paper-index="0" data-action="code" aria-label="Code"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_code">代码</span></a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="0" aria-label="Cite" data-i18n-title="cite_tooltip" title="复制 BibTeX"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="paper-action-label" data-i18n="action_cite">引用</span></button>
+              </div>
+            </li>
+            <li>
+              <span class="citation-text lang-zh">您的姓名. 另一篇论文标题. Transportation Research Part C., 2023.</span>
+              <span class="citation-text lang-en hidden">Your Name. Another Paper Title. Transportation Research Part C., 2023.</span>
+              <div class="citation-actions">
+                <a href="#" class="paper-action" data-paper-index="1" data-action="pdf" aria-label="PDF"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_pdf">文件</span></a>
+                <a href="#" class="paper-action" data-paper-index="1" data-action="code" aria-label="Code"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_code">代码</span></a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="1" aria-label="Cite" data-i18n-title="cite_tooltip"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="paper-action-label" data-i18n="action_cite">引用</span></button>
+              </div>
+            </li>
+            <li>
+              <span class="citation-text lang-zh">您的姓名. 更多论文可在此持续添加. Journal name., 2023.</span>
+              <span class="citation-text lang-en hidden">Your Name. More papers can be added here. Journal name., 2023.</span>
+              <div class="citation-actions">
+                <a href="#" class="paper-action" data-paper-index="2" data-action="pdf" aria-label="PDF"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_pdf">文件</span></a>
+                <a href="#" class="paper-action" data-paper-index="2" data-action="code" aria-label="Code"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_code">代码</span></a>
+                <button type="button" class="paper-action paper-cite" data-paper-index="2" aria-label="Cite" data-i18n-title="cite_tooltip"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="paper-action-label" data-i18n="action_cite">引用</span></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="research-panel" id="panel-resources">
+          <ul class="resource-list">
+            <li data-detail-type="resource" data-detail-id="0" class="detail-item">
+              <a href="#">数据集 / Dataset Name</a>
+              <span class="resource-desc" data-i18n="resource_desc">简要说明与下载说明</span>
+            </li>
+            <li data-detail-type="resource" data-detail-id="1" class="detail-item">
+              <a href="#">代码或工具 / Code or Tool</a>
+              <span class="resource-desc" data-i18n="resource_desc">简要说明与下载说明</span>
+            </li>
+            <li data-detail-type="resource" data-detail-id="2" class="detail-item">
+              <a href="#">更多资源可在此持续添加</a>
+              <span class="resource-desc" data-i18n="resource_desc">简要说明与下载说明</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text" data-i18n="footer">© 2025 · 保留所有权利</p>
+    </div>
+  </footer>
+
+  <div id="cite-toast" aria-live="polite"></div>
+  <div id="detail-overlay" class="detail-overlay" aria-hidden="true">
+    <div class="detail-backdrop"></div>
+    <div class="detail-panel">
+      <div id="detail-content" class="detail-content"></div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
