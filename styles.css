@@ -170,16 +170,21 @@ body.page-detail {
 }
 
 .about-photo-wrap {
-  margin-bottom: var(--space-md);
+  width: 200px;
+  height: 300px;
+  margin: 0 auto var(--space-md);
+  border-radius: 5%;
+  overflow: hidden;
 }
 
+/* cover = 用圆形裁剪，铺满无留白 */
 .about-photo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 300px;
   margin: 0 auto;
-  border-radius: 50%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .about-links {
