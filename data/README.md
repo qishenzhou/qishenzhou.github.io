@@ -6,7 +6,7 @@
 
 | 文件 | 用途 |
 |------|------|
-| **papers_eng.bib** / **papers_cn.bib** | 论文（工作概览 + 文章列表）。扩展字段：abstract、url、code、cover。引用按钮复制英文 BibTeX 并自动去掉上述扩展字段。 |
+| **papers_eng.bib** / **papers_cn.bib** | 论文（工作概览 + 文章列表）。扩展字段：abstract、url、code、cover、**corres**（通讯作者，如 `corres = {Hu, Simon}`，在文章列表引用中该作者后会显示上标 *）。引用按钮复制英文 BibTeX 并自动去掉 abstract、url、code、cover、corres。**文章列表**为 Elsevier 引用格式（作者, 年份. 标题. 期刊 卷, 页.），不显示 URL/DOI；站点维护者姓名（Zhou, Q.）加粗显示。 |
 | **activities_ch.json** / **activities_eng.json** | 学术活动时间线。每项：`date`, `title`, `body`；可选 **`image`**（本地图片路径，**仅用于二级内容**：图片显示在活动介绍正文后面，不显示在三级卡片中；空或不写则不显示）；可选 **`children`**（三级子卡片，无图片字段）。children 每项：`title`, `body`。两文件顺序一致，children 条数、顺序一致。 |
 | **projects_ch.json** / **projects_eng.json** | 研究项目列表。每项：`title`, `body`。两文件顺序一致。 |
 | **resources_ch.json** / **resources_eng.json** | 开放资源（二级）。每项：`title`, `body`, `link`，可选 **children**（三级，点击资源后展开）。children 每项：`title`, `body`, `link`。 |

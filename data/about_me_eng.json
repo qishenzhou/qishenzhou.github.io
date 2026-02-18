@@ -19,8 +19,9 @@
     }
   ],
   "news": [
-    {"date": "2025.02", "title": "Joining Jilin University", "body": "As Tang Aoqing Young Scholar (Associate Professor).","image": "images/news/mogernn.JPG", "children": [{"title": "Position details", "body": "Duties and benefits of the Tang Aoqing Young Scholar position."}, {"title": "Onboarding", "body": "Expected to start in Spring 2025; follow HR notice for exact date."}]},
-    {"date": "2024.12", "title": "Conference presentations", "body": "Conference talks and academic exchange."},
-    {"date": "2024.10", "title": "Returned from ETH Zurich", "body": "Completed visiting Ph.D. at ETH Zurich and returned."}
+    {"date": "2026.03", "title": "Defended PhD Dissertation", "body": "Completed PhD dissertation defense."},
+    {"date": "2025.02", "title": "Joining Jilin University", "body": "As Tang Aoqing Young Scholar (Associate Professor)."},
+    {"date": "2024.10", "title": "Returned from ETH Zurich", "body": "Completed visiting Ph.D. at ETH Zurich and returned."},
+    {"date": "2023.10", "title": "Started Visiting PhD at ETH Zurich", "body": "Started visiting PhD at ETH Zurich."}
   ]
 }

@@ -1,36 +1,113 @@
+@article{zhou2025NetworkWidea,
+  title = {Network-{{Wide Freeway Traffic Estimation Using Sparse Sensor Data}}: {{A Dirichlet Graph Auto-Encoder Approach}}},
+  shorttitle = {Network-{{Wide Freeway Traffic Estimation Using Sparse Sensor Data}}},
+  author = {Zhou, Qishen and Zhang, Yifan and Makridis, Michail A. and Kouvelas, Anastasios and Wang, Yibing and Hu, Simon},
+  year = 2025,
+  month = dec,
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  volume = {26},
+  number = {12},
+  pages = {22161--22177},
+  issn = {1558-0016},
+  doi = {10.1109/TITS.2025.3610911}
+  abstract = {},
+  url={https://ieeexplore.ieee.org/document/11202667},
+  code={},
+  abstract = {Network-wide Traffic State Estimation (TSE), which aims to infer a complete image of network traffic states with sparsely deployed sensors, plays a vital role in intelligent transportation systems. With the development of data-driven methods, traffic dynamics modeling has advanced significantly. However, TSE poses fundamental challenges for data-driven approaches, since historical patterns cannot be learned locally at sensor-free segments. Although graph representation learning shows promise in estimating states at locations without sensors, existing methods typically handle unobserved locations by filling them with zeros, introducing bias to the sensitive graph message propagation. The recently proposed Dirichlet Energy-based Feature Propagation (DEFP) method achieves State-Of-The-Art (SOTA) performance in unobserved node classification by eliminating the need for zero-filling. However, applying it to TSE faces three key challenges: inability to handle directed traffic networks, strong assumptions in traffic spatial correlation modeling, and overlooking distinct propagation rules of different patterns (e.g., congestion and free flow). We propose DGAE, a novel inductive graph representation model that addresses these challenges through theoretically derived DEFP for Directed graph (DEFP4D), enhanced spatial representation learning via DEFP4D-guided latent space encoding, and physics-guided propagation mechanisms that separately handle congested and free-flow patterns. Experiments on three traffic datasets demonstrate that DGAE outperforms existing SOTA methods and exhibits strong cross-city transferability. Furthermore, DEFP4D can serve as a standalone lightweight solution, showing superior performance under extremely sparse sensor conditions.}
+  code={https://github.com/ZJU-TSELab/DGAE},
+  cover={images/paper_cover/dgae.png},
+  corres={Hu, Simon}
+}
+
 @article{zhou2025mogernn,
-  title = {MoGERNN: An inductive traffic predictor for unobserved locations},
-  author = {Zhou, Q. and Zhang, Y. and Makridis, M.A. and Kouvelas, A. and Wang, Y. and Hu, S.},
+  title = {{{MoGERNN}}: {{An}} Inductive Traffic Predictor for Unobserved Locations},
+  shorttitle = {{{MoGERNN}}},
+  author = {Zhou, Qishen and Zhang, Yifan and Makridis, Michail A. and Kouvelas, Anastasios and Wang, Yibing and Hu, Simon},
+  year = 2025,
+  month = may,
   journal = {Transportation Research Part C: Emerging Technologies},
-  year = {2025},
   volume = {174},
   pages = {105080},
-  abstract = {An inductive traffic predictor for unobserved locations.},
-  url = {https://example.com/pdf/mogernn.pdf},
-  code = {https://github.com/example/mogernn},
-  cover = {images/paper_cover/mogernn.JPG}
+  issn = {0968090X},
+  doi = {10.1016/j.trc.2025.105080},
+  abstract = {Given a partially observed road network, how can we predict the traffic state of interested unobserved locations? Traffic prediction is crucial for advanced traffic management systems, with deep learning approaches showing exceptional performance. However, most existing approaches assume sensors are deployed at all locations of interest, which is impractical due to financial constraints. Furthermore, these methods are typically fragile to structural changes in sensing networks, which require costly retraining even for minor changes in sensor configuration. To address these challenges, we propose MoGERNN, an inductive spatio-temporal graph model with two key components: (i) a Mixture of Graph Experts (MoGE) with sparse gating mechanisms that dynamically route nodes to specialized graph aggregators, capturing heterogeneous spatial dependencies efficiently; (ii) a graph encoder-decoder architecture that leverages these embeddings to capture both spatial and temporal dependencies for comprehensive traffic state prediction. Experiments on two real-world datasets show MoGERNN consistently outperforms baseline methods for both observed and unobserved locations. MoGERNN can accurately predict congestion evolution even in areas without sensors, offering valuable information for traffic management. Moreover, MoGERNN is adaptable to the changes of sensor network, maintaining competitive performance even compared to its retrained counterpart. Tests performed with different numbers of available sensors confirm its consistent superiority, and ablation studies validate the effectiveness of its key modules.},
+  url={https://linkinghub.elsevier.com/retrieve/pii/S0968090X25000841},
+  code={https://github.com/ZJU-TSELab/MoGERNN},
+  corres={Hu, Simon}
+  cover={images/paper_cover/mogernn.png}
 }
 
-@article{zhou2023safety,
-  title = {A safety-enhanced eco-driving strategy for connected and autonomous vehicles: A hierarchical and distributed framework},
-  author = {Zhou, Q. and Zhou, B. and Hu, S. and Roncoli, C. and Wang, Y. and Hu, J. and Lu, G.},
+
+@article{zhou2023Safetyenhanced,
+  title = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles: {{A}} Hierarchical and Distributed Framework},
+  shorttitle = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles},
+  author = {Zhou, Qishen and Zhou, Bin and Hu, Simon and Roncoli, Claudio and Wang, Yibing and Hu, Jia and Lu, Guangquan},
+  year = 2023,
+  month = nov,
   journal = {Transportation Research Part C: Emerging Technologies},
-  year = {2023},
   volume = {156},
   pages = {104320},
-  abstract = {A hierarchical and distributed framework for safety-enhanced eco-driving of CAVs.},
-  url = {https://example.com/pdf/safety.pdf},
-  code = {},
-  cover = {}
+  issn = {0968-090X},
+  doi = {10.1016/j.trc.2023.104320},
+  corres={Hu, Simon}
+  abstract={This paper presents a safety-enhanced eco-driving strategy for connected and autonomous vehicles (CAVs), which is implemented by a hierarchical and distributed framework. The driving risk field, shockwave theory, and motion planning and control method are integrated into this framework to optimize the trajectories of CAVs on a signalized arterial under mixed traffic flow, with the aim of reducing the driving risk and fuel consumption of CAVs simultaneously, while ensuring traffic efficiency. The optimization procedure is mainly composed of two parts: long-term trajectory planning based on optimal control and short-term trajectory control based on model predictive control, which makes the strategy more adaptable to the various traffic conditions. The results show that the proposed framework can effectively reduce the safety risk that vehicles are exposed to and their fuel consumption by 18%–24% and 20%–27%, respectively. Furthermore, it reveals that conventional eco-driving strategies may result in negative safety issues when only considering the impact of preceding vehicles on the eco-CAV. However, these negative impacts can be eliminated when the impacts of following vehicles on the eco-CAV are taken into account. In addition, the sensitivity analysis on the Market Penetration Rate (MPR) of CAVs and traffic demand is performed. The results show that the framework is robust and can work under various traffic conditions (including under-saturated and over-saturated ones) and different MPRs.},
+  url={https://www.sciencedirect.com/science/article/pii/S0968090X23003091},
+  code={},
+  cover={images/paper_cover/safety.png}
 }
 
-@article{zhou2025network,
-  title = {Network-wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach},
-  author = {Zhou, Q. and Zhang, Y. and Makridis, M.A. and Kouvelas, A. and Wang, Y. and Hu, S.},
+@article{hu2022HighTimeResolutionQueue,
+  title = {High {{Time-Resolution Queue Profile Estimation}} at {{Signalized Intersections Based}} on {{Extended Kalman Filtering}}},
+  author = {Hu, Simon and Zhou, Qishen and Li, Junyi and Wang, Yibing and Roncoli, Claudio and Zhang, Lihui and Lehe, Lewis},
+  year = 2022,
+  month = nov,
   journal = {IEEE Transactions on Intelligent Transportation Systems},
-  year = {2025},
-  note = {Submitted},
-  abstract = {Network-wide freeway traffic estimation using sparse sensor data via a Dirichlet graph auto-encoder approach.},
-  url = {},
-  code = {}
+  volume = {23},
+  number = {11},
+  pages = {21274--21290},
+  issn = {1558-0016},
+  doi = {10.1109/TITS.2022.3173515},
+  corres={Hu, Simon and Wang, Yibing}
+  abstract={The dynamic spatiotemporal characteristics of queues at urban intersections are crucial to traffic operation tasks such as signal performance measure and signal optimization. This paper addresses the high time-resolution estimation of queue profile at urban signalized intersection using Extended Kalman Filtering (EKF) with data of connected vehicles (CVs). The main features of this work are as follows: (i) a machine learning method was applied to construct a dynamic shockwave propagation model based on shockwave theory and historical data of CVs; (ii) a heuristic approach was proposed to measure the shockwave speed for use in EKF; (iii) an urban queue estimator was designed to combine the dynamic shockwave propagation model and real-time shockwave information via EKF to deliver secondby-second queue profile estimates. The queue estimator does not require any priori information about vehicle arrival patterns and the market penetration rate (MPR) of CVs. The performance and robustness of the queue estimator were evaluated using both simulation and real-world CV data. The results show that the method can provide satisfactory queue estimation results at various MPR levels of CVs, with the estimation error of 2.5 vehicles at the MPR of 5%, and of 0.5 vehicle at the MPR of 40%.},
+  url={https://ieeexplore.ieee.org/document/9780260},
+  code={},
+  cover={images/paper_cover/ekf4q.png}
 }
+
+
+@article{zhang2025CASAformer,
+  title = {{{CASAformer}}: {{Congestion-aware}} Sparse Attention Transformer for Traffic Speed Prediction},
+  shorttitle = {{{CASAformer}}},
+  author = {Zhang, Yifan and Zhou, Qishen and Wang, Jianping and Kouvelas, Anastasios and Makridis, Michail A.},
+  year = 2025,
+  month = dec,
+  journal = {Communications in Transportation Research},
+  volume = {5},
+  pages = {100174},
+  issn = {2772-4247},
+  doi = {10.1016/j.commtr.2025.100174},
+  url={https://www.sciencedirect.com/science/article/pii/S2772424725000149},
+  code={https://gith ub.com/Yifanny/CASAformer},
+  abstract={Accurate and efficient traffic speed prediction is crucial for improving roaDongguand safety and efficiency. With the emerging deep learning and extensive traffic data, data-driven methods are widely adopted to achieve this task with increasingly complicated structures and progressively deeper layers of neural networks. Despite the design of the models, they aim to optimize the overall average performance without discriminating against different traffic states. However, the fact is that predicting the traffic speed under congestion is normally more important than under free flow since the downstream tasks, such as traffic control and optimization, are more interested in congestion rather than free flow. Most of the State-Of-The-Art (SOTA) models unfortunately do not differentiate between the traffic states during training and evaluation. To this end, we first comprehensively study the performance of the SOTA models under different speed regimes to illustrate the low accuracy of low-speed prediction. We further propose and design a novel Congestion-Aware Sparse Attention transformer (CASAformer) to enhance the prediction performance under low-speed traffic conditions. Specifically, the CASA layer emphasizes the congestion data and reduces the impact of free-flow data. Moreover, we adopt a new congestion adaptive loss function for training to make the model learn more from the congestion data. Extensive experiments on real-world datasets show that our CASAformer outperforms the SOTA models for predicting speed under 40 mph in all prediction horizons.},
+  cover={images/paper_cover/casaf.png},
+  corres={Zhang, Yifan}
+}
+
+@article{zhou2024CooperativeTrafficSignal,
+  title = {Cooperative {{Traffic Signal Control Using}} a {{Distributed Agent-Based Deep Reinforcement Learning With Incentive Communication}}},
+  author = {Zhou, Bin and Zhou, Qishen and Hu, Simon and Ma, Dongfang and Jin, Sheng and Lee, Der-Horng},
+  year = 2024,
+  month = aug,
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  volume = {25},
+  number = {8},
+  pages = {10147--10160},
+  issn = {1558-0016},
+  doi = {10.1109/TITS.2024.3352730},
+  url={https://ieeexplore.ieee.org/document/10440155},
+  abstract={Deep Reinforcement Learning has shown some promise in dynamic traffic signal control by adapting to real-time traffic conditions. However, multi-intersection control presents challenges, primarily due to the need for efficient information exchange across increasing intersections, and the importance of spatiotemporal dynamics in traffic flows. Traditional methods often focus solely on spatial or temporal aspects, leading to suboptimal control strategies. This paper introduces a novel Multi-Agent Incentive Communication Deep Reinforcement Learning (MICDRL) method, designed for collaborative control across multiple intersections. MICDRL features an incentive communication mechanism, allowing agents to generate customized messages that influence other agents’ policies, thereby enhancing coordination and achieving globally optimal decisions. A key feature of MICDRL is its reliance on local information for message generation, effectively reducing communication overhead while ensuring collaboration. Additionally, MICDRL integrates a teammate module that leverages temporal data for predicting other agents’ actions, crucial for understanding collective dynamics and spatial environment characteristics. Empirical results show that MICDRL outperforms several state-of-the-art methods in metrics like queue length and throughput. Furthermore, we introduce a tailored three-layer Internet-of-Things architecture to enhance data collection and transmission.},
+  code={},
+  cover={images/paper_cover/coo.png}
+  corres={Hu, Simon}
+}
+

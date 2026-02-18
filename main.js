@@ -121,6 +121,7 @@
   var paperDetails = [];
   var paperBibtex = [];
   var paperLinks = [];
+  var PAPER_ACTION_TPL = '<a href="#" class="paper-action" data-paper-index="INDEX" data-action="pdf" aria-label="PDF"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_pdf">文件</span></a><a href="#" class="paper-action" data-paper-index="INDEX" data-action="code" aria-label="Code"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_code">代码</span></a><button type="button" class="paper-action paper-cite" data-paper-index="INDEX" aria-label="Cite" data-i18n-title="cite_tooltip"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="paper-action-label" data-i18n="action_cite">引用</span></button><button type="button" class="paper-action paper-like-btn" data-paper-like-index="INDEX" aria-label="点赞"><span class="paper-action-icon"><svg class="heart-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg class="heart-filled" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span class="paper-action-label" data-i18n="paper_like">点赞</span></button>';
 
   var resourceDetails = [];
   var projectDetails = [];
@@ -181,6 +182,71 @@
     try { localStorage.setItem('paper-liked', JSON.stringify(o)); } catch (e) {}
   }
 
+  function stripBibtexBraces(s) {
+    if (!s || typeof s !== 'string') return s;
+    return s.replace(/\{|\}/g, '');
+  }
+
+  var CITATION_AUTHOR_BOLD = 'Zhou, Q.';
+
+  function formatOneAuthorToElsevier(oneAuthorStr) {
+    if (!oneAuthorStr || typeof oneAuthorStr !== 'string') return '';
+    var p = oneAuthorStr.trim();
+    var comma = p.indexOf(',');
+    if (comma === -1) return p;
+    var last = p.slice(0, comma).trim();
+    var first = p.slice(comma + 1).trim();
+    var initials = first.split(/\s+/).map(function (w) {
+      var c = w.charAt(0).toUpperCase();
+      return c ? (c + (w.slice(-1) === '.' ? '' : '.')) : '';
+    }).join('.');
+    return last + ', ' + initials;
+  }
+
+  function formatBibtexAuthorToElsevier(authorStr) {
+    if (!authorStr || typeof authorStr !== 'string') return '';
+    var parts = authorStr.split(/\s+and\s+/i);
+    return parts.map(function (p) { return formatOneAuthorToElsevier(p); }).join(', ');
+  }
+
+  function formatCitationAuthorHtml(authorStr, corresStr) {
+    if (!authorStr || typeof authorStr !== 'string') return '';
+    var parts = authorStr.split(/\s+and\s+/i);
+    var corresSet = {};
+    if (corresStr && typeof corresStr === 'string') {
+      corresStr.split(/\s+and\s+/i).forEach(function (c) {
+        var a = formatOneAuthorToElsevier(c.trim());
+        if (a) corresSet[a] = true;
+      });
+    }
+    var formatted = parts.map(function (p) { return formatOneAuthorToElsevier(p); });
+    var html = formatted.map(function (a) {
+      var isBold = (CITATION_AUTHOR_BOLD && a === CITATION_AUTHOR_BOLD);
+      var isCorres = corresSet[a];
+      var span = isBold ? '<strong>' + escapeHtml(a) + '</strong>' : escapeHtml(a);
+      if (isCorres) span += '<sup>*</sup>';
+      return span;
+    }).join(', ');
+    return html;
+  }
+
+  function formatCitationElsevier(p) {
+    var authorHtml = formatCitationAuthorHtml(p.author, p.corres);
+    var year = (p.year || '').toString().trim();
+    var title = stripBibtexBraces(p.title_en || p.title_zh || '');
+    var venue = (p.venue || '').trim();
+    var vol = (p.volume || '').toString().trim();
+    var pages = (p.pages || '').toString().trim();
+    var venuePart = venue;
+    if (vol) venuePart += ' ' + vol;
+    if (pages) venuePart += (vol ? ', ' : ' ') + pages;
+    var rest = [];
+    if (year) rest.push(year + '.');
+    if (title) rest.push(title + '.');
+    if (venuePart) rest.push(venuePart + '.');
+    return { authorHtml: authorHtml, rest: rest.join(' ') };
+  }
+
   function parseBibFile(text) {
     var entries = [];
     var re = /@(\w+)\s*\{\s*([^,]+),/g;
@@ -218,13 +284,18 @@
           fields[fname] = (vend === -1 ? rest.slice(vstart) : rest.slice(vstart, vend)).replace(/\s+/g, ' ').trim();
         }
       }
+      var bareRe = /(\w+)\s*=\s*([^,{}\n]+)/g;
+      while ((fm = bareRe.exec(rest)) !== null) {
+        var fname = fm[1].toLowerCase();
+        if (fields[fname] === undefined) fields[fname] = fm[2].trim();
+      }
       entries.push({ type: type, key: key, fields: fields });
     }
     return entries;
   }
 
   function bibEntryToCiteBibtex(entry) {
-    var omit = { abstract: 1, url: 1, code: 1, cover: 1 };
+    var omit = { abstract: 1, url: 1, code: 1, cover: 1, corres: 1 };
     var lines = ['@' + entry.type + '{' + entry.key + ','];
     for (var k in entry.fields) {
       if (omit[k]) continue;
@@ -252,13 +323,19 @@
         var f = e.fields;
         var cf = c.fields;
         paperDetails.push({
-          title_zh: cf.title || f.title,
-          title_en: f.title,
-          venue: f.journal || f.booktitle || '',
+          title_zh: stripBibtexBraces(cf.title || f.title),
+          title_en: stripBibtexBraces(f.title),
+          author: (f.author || '').trim(),
+          corres: (f.corres || '').trim(),
+          venue: (f.journal || f.booktitle || '').trim(),
+          volume: (f.volume || '').toString().trim(),
+          pages: (f.pages || '').toString().trim(),
           year: f.year || '',
           abstract_zh: cf.abstract || f.abstract || '',
           abstract_en: f.abstract || '',
-          cover: (f.cover || '').trim()
+          cover: (f.cover || '').trim(),
+          doi: (f.doi || '').toString().trim(),
+          url: (f.url || '').trim()
         });
         paperBibtex.push(bibEntryToCiteBibtex(e));
         var url = (f.url || '').trim();
@@ -276,7 +353,6 @@
     var listEl = document.getElementById('paper-list');
     var citeListEl = document.getElementById('citation-list');
     if (!listEl && !citeListEl) return;
-    var paperActionTpl = '<a href="#" class="paper-action" data-paper-index="INDEX" data-action="pdf" aria-label="PDF"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2 L 19 2 L 19 16 L 14 22 L 5 22 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 16 L 14 22 L 14 16 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_pdf">文件</span></a><a href="#" class="paper-action" data-paper-index="INDEX" data-action="code" aria-label="Code"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L4 12l5-6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="paper-action-label" data-i18n="action_code">代码</span></a><button type="button" class="paper-action paper-cite" data-paper-index="INDEX" aria-label="Cite" data-i18n-title="cite_tooltip"><span class="paper-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7.24c0-.6-.24-1.18-.66-1.59L16.35 2.66A2.25 2.25 0 0 0 14.76 2H10c-1.1 0-2 .9-2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 2v5h5M4 14v4c0 1.1.9 2 2 2h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="paper-action-label" data-i18n="action_cite">引用</span></button><button type="button" class="paper-action paper-like-btn" data-paper-like-index="INDEX" aria-label="点赞"><span class="paper-action-icon"><svg class="heart-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><svg class="heart-filled" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span class="paper-action-label" data-i18n="paper_like">点赞</span></button>';
     if (listEl) {
       var lang = typeof currentLang !== 'undefined' ? currentLang : 'zh';
       var zhVis = lang === 'zh' ? '' : ' hidden';
@@ -288,16 +364,22 @@
           : '';
         var li = document.createElement('li');
         li.setAttribute('data-paper-index', i);
-        li.innerHTML = '<div class="paper-header"><strong class="paper-title"><span class="lang-zh' + zhVis + '">' + escapeHtml(p.title_zh) + '</span><span class="paper-title-en lang-en' + enVis + '">' + escapeHtml(p.title_en) + '</span></strong><span class="paper-venue">' + escapeHtml(p.venue) + ' · ' + escapeHtml(p.year) + '</span></div><div class="paper-content">' + thumbBlock + '<div class="paper-abstract-wrap"><p class="paper-abstract lang-zh' + zhVis + '">' + escapeHtml(p.abstract_zh) + '</p><p class="paper-abstract lang-en' + enVis + '">' + escapeHtml(p.abstract_en) + '</p></div></div><div class="paper-actions">' + paperActionTpl.replace(/INDEX/g, i) + '</div>';
+        li.innerHTML = '<div class="paper-header"><strong class="paper-title"><span class="lang-zh' + zhVis + '">' + escapeHtml(p.title_zh) + '</span><span class="paper-title-en lang-en' + enVis + '">' + escapeHtml(p.title_en) + '</span></strong><span class="paper-venue">' + escapeHtml(p.venue) + ' · ' + escapeHtml(p.year) + '</span></div><div class="paper-content">' + thumbBlock + '<div class="paper-abstract-wrap"><p class="paper-abstract lang-zh' + zhVis + '">' + escapeHtml(p.abstract_zh) + '</p><p class="paper-abstract lang-en' + enVis + '">' + escapeHtml(p.abstract_en) + '</p></div></div><div class="paper-actions">' + PAPER_ACTION_TPL.replace(/INDEX/g, i) + '</div>';
         listEl.appendChild(li);
       });
     }
     if (citeListEl) {
       citeListEl.innerHTML = '';
       paperDetails.forEach(function (p, i) {
-        var actions = paperActionTpl.replace(/INDEX/g, i);
+        var actions = PAPER_ACTION_TPL.replace(/INDEX/g, i);
         var li = document.createElement('li');
-        li.innerHTML = '<span class="citation-text">' + escapeHtml(p.title_en) + '. ' + escapeHtml(p.venue) + ', ' + escapeHtml(p.year) + '.</span><div class="citation-actions">' + actions + '</div>';
+        li.className = 'citation-item detail-item';
+        li.setAttribute('data-detail-type', 'paper');
+        li.setAttribute('data-detail-id', i);
+        li.setAttribute('data-paper-index', i);
+        var cit = formatCitationElsevier(p);
+        var citationHtml = (cit.authorHtml ? cit.authorHtml + ' ' : '') + escapeHtml(cit.rest);
+        li.innerHTML = '<div class="citation-row"><span class="citation-text">' + citationHtml + '</span><div class="citation-actions">' + actions + '</div></div>';
         citeListEl.appendChild(li);
       });
     }
@@ -436,10 +518,10 @@
           });
         }
         resourceDetails.push({
-          title_zh: z.title || '',
-          title_en: e.title || '',
-          desc_zh: z.body || '',
-          desc_en: e.body || '',
+          title_zh: (z.title != null && z.title !== '') ? z.title : (e.title || ''),
+          title_en: (e.title != null && e.title !== '') ? e.title : (z.title || ''),
+          desc_zh: (z.body != null && z.body !== '') ? z.body : (z.description || z.desc || e.body || e.description || e.desc || ''),
+          desc_en: (e.body != null && e.body !== '') ? e.body : (e.description || e.desc || z.body || z.description || z.desc || ''),
           link_zh: z.link || '',
           link_en: e.link || '',
           children: children
@@ -460,8 +542,9 @@
       var title = currentLang === 'zh' ? r.title_zh : r.title_en;
       var desc = currentLang === 'zh' ? r.desc_zh : r.desc_en;
       var link = currentLang === 'zh' ? r.link_zh : r.link_en;
-      var aHref = link ? escapeHtml(link) : '#';
-      var aExtra = link ? ' target="_blank" rel="noopener noreferrer"' : '';
+      var isUrl = link && (/^https?:\/\//i.test(link) || /^\//.test(link));
+      var aHref = isUrl ? escapeHtml(link) : '#';
+      var aExtra = isUrl ? ' target="_blank" rel="noopener noreferrer"' : '';
       li.innerHTML = '<a href="' + aHref + '"' + aExtra + '>' + escapeHtml(title) + '</a><span class="resource-desc">' + escapeHtml(desc) + '</span>';
       listEl.appendChild(li);
     });
@@ -699,12 +782,12 @@
         if (links.pdf) {
           a.href = links.pdf;
           a.classList.remove('pending');
-          a.removeAttribute('data-i18n-title');
+          a.removeAttribute('aria-disabled');
           if (label) label.setAttribute('data-i18n', 'action_pdf');
         } else {
           a.href = '#';
           a.classList.add('pending');
-          a.setAttribute('data-i18n-title', 'pdf_tba');
+          a.setAttribute('aria-disabled', 'true');
           if (label) label.setAttribute('data-i18n', 'action_pdf');
         }
       });
@@ -713,12 +796,12 @@
         if (links.code) {
           a.href = links.code;
           a.classList.remove('pending');
-          a.removeAttribute('data-i18n-title');
+          a.removeAttribute('aria-disabled');
           if (label) label.setAttribute('data-i18n', 'action_code');
         } else {
           a.href = '#';
           a.classList.add('pending');
-          a.setAttribute('data-i18n-title', 'code_tba');
+          a.setAttribute('aria-disabled', 'true');
           if (label) label.setAttribute('data-i18n', 'action_code');
         }
       });
@@ -771,6 +854,9 @@
       } else {
         orgLink.href = currentLang === 'zh' ? 'https://jt.jlu.edu.cn/index.htm' : 'https://jt.jlu.edu.cn/en/index.htm';
       }
+    }
+    if (document.getElementById('resource-list') && resourceDetails.length > 0) {
+      renderResourceList();
     }
     var h = typeof getHashId === 'function' ? getHashId() : null;
     if (h && overlay && overlay.classList.contains('is-open')) {
@@ -837,7 +923,8 @@
       var p = paperDetails[id];
       var title = lang === 'zh' ? p.title_zh : p.title_en;
       var abs = lang === 'zh' ? p.abstract_zh : p.abstract_en;
-      html = '<h2>' + escapeHtml(title) + '</h2><p class="detail-meta">' + escapeHtml(p.venue) + ' · ' + escapeHtml(p.year) + '</p><div class="detail-body">' + escapeHtml(abs) + '</div>';
+      var thumbBlock = p.cover ? '<div class="paper-thumb"><img src="' + escapeHtml(p.cover) + '" alt="" /></div>' : '';
+      html = '<h2>' + escapeHtml(title) + '</h2><p class="detail-meta">' + escapeHtml(p.venue) + ' · ' + escapeHtml(p.year) + '</p><div class="detail-body">' + escapeHtml(abs) + '</div>' + (thumbBlock ? '<div class="detail-paper-thumb">' + thumbBlock + '</div>' : '') + '<div class="paper-actions detail-paper-actions">' + PAPER_ACTION_TPL.replace(/INDEX/g, id) + '</div>';
     } else if (type === 'resource' && resourceDetails[id]) {
       var r = resourceDetails[id];
       var rTitle = lang === 'zh' ? r.title_zh : r.title_en;
@@ -902,6 +989,15 @@
         '</div>';
     }
     detailContent.innerHTML = html || '';
+    if (type === 'paper') {
+      applyPaperLinks();
+      applyCitePending();
+      var likeBtn = detailContent.querySelector('.paper-like-btn');
+      if (likeBtn) {
+        var idx = likeBtn.getAttribute('data-paper-like-index');
+        if (idx != null && getPaperLiked()[idx]) likeBtn.classList.add('liked');
+      }
+    }
     if (type === 'gallery') {
       bindGalleryDetailActions();
       var wrap = detailContent.querySelector('.detail-gallery-image');
@@ -933,7 +1029,6 @@
   }
 
   function openDetail(type, id) {
-    if (type === 'paper') return;
     location.hash = type + '-' + id;
     if (!overlay) return;
     renderDetail(type, id);
@@ -959,6 +1054,7 @@
     var item = e.target.closest('.detail-item') || e.target.closest('.gallery-item');
     if (!item) return;
     if (item.querySelector('.paper-actions') && e.target.closest('.paper-actions')) return;
+    if (item.querySelector('.citation-actions') && e.target.closest('.citation-actions')) return;
     var link = e.target.closest('a[href]');
     if (link && link.getAttribute('href') && link.getAttribute('href').indexOf('http') === 0) return;
     var type = item.getAttribute('data-detail-type');
@@ -1009,11 +1105,10 @@
       if (idx == null) return;
       if (!paperBibtex[parseInt(idx, 10)]) {
         btn.classList.add('pending');
-        btn.setAttribute('data-i18n-title', 'cite_tba');
+        btn.setAttribute('aria-disabled', 'true');
       } else {
         btn.classList.remove('pending');
-        btn.removeAttribute('data-i18n-title');
-        btn.removeAttribute('data-pending-tip');
+        btn.removeAttribute('aria-disabled');
       }
     });
   }
@@ -1038,16 +1133,18 @@
     document.querySelectorAll('.paper-like-btn').forEach(function (btn) {
       var id = btn.getAttribute('data-paper-like-index');
       if (id != null && paperLiked[id]) btn.classList.add('liked');
-      btn.addEventListener('click', function () {
-        var id = this.getAttribute('data-paper-like-index');
-        if (id == null) return;
-        var liked = !this.classList.contains('liked');
-        this.classList.toggle('liked', liked);
-        setPaperLiked(id, liked);
-        if (liked && firebaseDb) {
-          firebaseDb.ref('paper_likes/' + id).push({ t: Date.now() });
-        }
-      });
+    });
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('.paper-like-btn');
+      if (!btn) return;
+      var id = btn.getAttribute('data-paper-like-index');
+      if (id == null) return;
+      var liked = !btn.classList.contains('liked');
+      btn.classList.toggle('liked', liked);
+      setPaperLiked(id, liked);
+      if (liked && firebaseDb) {
+        firebaseDb.ref('paper_likes/' + id).push({ t: Date.now() });
+      }
     });
   }
 
