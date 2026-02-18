@@ -989,6 +989,26 @@
         '</div>';
     }
     detailContent.innerHTML = html || '';
+    // 本地化详情面板中的文案（尤其是操作按钮标签）
+    var root = detailContent;
+    if (root) {
+      root.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (i18n[currentLang] && i18n[currentLang][key] !== undefined) {
+          el.textContent = i18n[currentLang][key];
+        }
+      });
+      root.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-title');
+        if (i18n[currentLang] && i18n[currentLang][key] !== undefined) {
+          var text = i18n[currentLang][key];
+          el.setAttribute('title', text);
+          if (key === 'pdf_tba' || key === 'code_tba' || key === 'cite_tba') {
+            el.setAttribute('data-pending-tip', i18n[currentLang].pending_tip);
+          }
+        }
+      });
+    }
     if (type === 'paper') {
       applyPaperLinks();
       applyCitePending();
