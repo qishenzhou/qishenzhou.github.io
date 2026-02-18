@@ -1019,6 +1019,7 @@
   }
 
   setLang(currentLang);
+  document.documentElement.classList.remove('js-lang-pending');
 
   document.addEventListener('click', function (e) {
     if (e.target.closest('a.paper-action.pending')) e.preventDefault();

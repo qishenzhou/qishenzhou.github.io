@@ -18,7 +18,7 @@
 
 - **论文配图**：放在站点根目录的 **paper_cover/** 下，在 papers_eng.bib 里用 `cover = {paper_cover/文件名}` 引用。
 - **摄影集图片**：路径在 **gallery_list.json** 中，为相对站点根目录。运行 `node scripts/build-gallery.js` 会扫描根目录 **gallery/** 并生成路径如 `gallery/xxx.jpg`；若你手动编辑 JSON（如写 `images/gallery/xxx.jpg`），请确保该路径下确有文件，否则会渲染失败。
-- **学术活动图片**：在 **activities_eng.json** 的每条 `image` 字段填写相对站点的路径（如 `images/activities/xxx.jpg`），图片放在站点根目录对应路径；留空则不显示。**图片路径只从英文 JSON 读取，中文 JSON 不参与。**
+- **学术活动图片**：在 **activities_eng.json** 的每条 `image` 字段填写相对站点的路径（如 `images/activities/xxx.jpg`），图片放在站点根目录对应路径；留空则不显示。**图片路径只从英文 JSON 读取。** 部署到 GitHub Pages 时路径**区分大小写**（如实际文件是 `nice.JPG` 则必须写 `nice.JPG`），且需将图片一并提交到仓库。
 - **近期动态图片**：在 **about_me_eng.json** 的 `news` 每条的 `image` 字段填写相对站点的路径（如 `images/news/xxx.jpg`），图片在时间线中显示在文字下方；留空则不显示。**图片路径只从英文 JSON 读取，中文 JSON 不参与。**
 
 ## 中英文对应
