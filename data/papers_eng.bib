@@ -38,43 +38,6 @@
 }
 
 
-@article{zhou2023Safetyenhanced,
-  title = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles: {{A}} Hierarchical and Distributed Framework},
-  shorttitle = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles},
-  author = {Zhou, Qishen and Zhou, Bin and Hu, Simon and Roncoli, Claudio and Wang, Yibing and Hu, Jia and Lu, Guangquan},
-  year = 2023,
-  month = nov,
-  journal = {Transportation Research Part C: Emerging Technologies},
-  volume = {156},
-  pages = {104320},
-  issn = {0968-090X},
-  doi = {10.1016/j.trc.2023.104320},
-  corres={Hu, Simon}
-  abstract={This paper presents a safety-enhanced eco-driving strategy for connected and autonomous vehicles (CAVs), which is implemented by a hierarchical and distributed framework. The driving risk field, shockwave theory, and motion planning and control method are integrated into this framework to optimize the trajectories of CAVs on a signalized arterial under mixed traffic flow, with the aim of reducing the driving risk and fuel consumption of CAVs simultaneously, while ensuring traffic efficiency. The optimization procedure is mainly composed of two parts: long-term trajectory planning based on optimal control and short-term trajectory control based on model predictive control, which makes the strategy more adaptable to the various traffic conditions. The results show that the proposed framework can effectively reduce the safety risk that vehicles are exposed to and their fuel consumption by 18%–24% and 20%–27%, respectively. Furthermore, it reveals that conventional eco-driving strategies may result in negative safety issues when only considering the impact of preceding vehicles on the eco-CAV. However, these negative impacts can be eliminated when the impacts of following vehicles on the eco-CAV are taken into account. In addition, the sensitivity analysis on the Market Penetration Rate (MPR) of CAVs and traffic demand is performed. The results show that the framework is robust and can work under various traffic conditions (including under-saturated and over-saturated ones) and different MPRs.},
-  url={https://www.sciencedirect.com/science/article/pii/S0968090X23003091},
-  code={},
-  cover={images/paper_cover/safety.png}
-}
-
-@article{hu2022HighTimeResolutionQueue,
-  title = {High {{Time-Resolution Queue Profile Estimation}} at {{Signalized Intersections Based}} on {{Extended Kalman Filtering}}},
-  author = {Hu, Simon and Zhou, Qishen and Li, Junyi and Wang, Yibing and Roncoli, Claudio and Zhang, Lihui and Lehe, Lewis},
-  year = 2022,
-  month = nov,
-  journal = {IEEE Transactions on Intelligent Transportation Systems},
-  volume = {23},
-  number = {11},
-  pages = {21274--21290},
-  issn = {1558-0016},
-  doi = {10.1109/TITS.2022.3173515},
-  corres={Hu, Simon and Wang, Yibing}
-  abstract={The dynamic spatiotemporal characteristics of queues at urban intersections are crucial to traffic operation tasks such as signal performance measure and signal optimization. This paper addresses the high time-resolution estimation of queue profile at urban signalized intersection using Extended Kalman Filtering (EKF) with data of connected vehicles (CVs). The main features of this work are as follows: (i) a machine learning method was applied to construct a dynamic shockwave propagation model based on shockwave theory and historical data of CVs; (ii) a heuristic approach was proposed to measure the shockwave speed for use in EKF; (iii) an urban queue estimator was designed to combine the dynamic shockwave propagation model and real-time shockwave information via EKF to deliver secondby-second queue profile estimates. The queue estimator does not require any priori information about vehicle arrival patterns and the market penetration rate (MPR) of CVs. The performance and robustness of the queue estimator were evaluated using both simulation and real-world CV data. The results show that the method can provide satisfactory queue estimation results at various MPR levels of CVs, with the estimation error of 2.5 vehicles at the MPR of 5%, and of 0.5 vehicle at the MPR of 40%.},
-  url={https://ieeexplore.ieee.org/document/9780260},
-  code={},
-  cover={images/paper_cover/ekf4q.png}
-}
-
-
 @article{zhang2025CASAformer,
   title = {{{CASAformer}}: {{Congestion-aware}} Sparse Attention Transformer for Traffic Speed Prediction},
   shorttitle = {{{CASAformer}}},
@@ -109,5 +72,43 @@
   code={},
   cover={images/paper_cover/coo.png}
   corres={Hu, Simon}
+}
+
+
+
+@article{zhou2023Safetyenhanced,
+  title = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles: {{A}} Hierarchical and Distributed Framework},
+  shorttitle = {A Safety-Enhanced Eco-Driving Strategy for Connected and Autonomous Vehicles},
+  author = {Zhou, Qishen and Zhou, Bin and Hu, Simon and Roncoli, Claudio and Wang, Yibing and Hu, Jia and Lu, Guangquan},
+  year = 2023,
+  month = nov,
+  journal = {Transportation Research Part C: Emerging Technologies},
+  volume = {156},
+  pages = {104320},
+  issn = {0968-090X},
+  doi = {10.1016/j.trc.2023.104320},
+  corres={Hu, Simon}
+  abstract={This paper presents a safety-enhanced eco-driving strategy for connected and autonomous vehicles (CAVs), which is implemented by a hierarchical and distributed framework. The driving risk field, shockwave theory, and motion planning and control method are integrated into this framework to optimize the trajectories of CAVs on a signalized arterial under mixed traffic flow, with the aim of reducing the driving risk and fuel consumption of CAVs simultaneously, while ensuring traffic efficiency. The optimization procedure is mainly composed of two parts: long-term trajectory planning based on optimal control and short-term trajectory control based on model predictive control, which makes the strategy more adaptable to the various traffic conditions. The results show that the proposed framework can effectively reduce the safety risk that vehicles are exposed to and their fuel consumption by 18%–24% and 20%–27%, respectively. Furthermore, it reveals that conventional eco-driving strategies may result in negative safety issues when only considering the impact of preceding vehicles on the eco-CAV. However, these negative impacts can be eliminated when the impacts of following vehicles on the eco-CAV are taken into account. In addition, the sensitivity analysis on the Market Penetration Rate (MPR) of CAVs and traffic demand is performed. The results show that the framework is robust and can work under various traffic conditions (including under-saturated and over-saturated ones) and different MPRs.},
+  url={https://www.sciencedirect.com/science/article/pii/S0968090X23003091},
+  code={},
+  cover={images/paper_cover/safety.png}
+}
+
+@article{hu2022HighTimeResolutionQueue,
+  title = {High {{Time-Resolution Queue Profile Estimation}} at {{Signalized Intersections Based}} on {{Extended Kalman Filtering}}},
+  author = {Hu, Simon and Zhou, Qishen and Li, Junyi and Wang, Yibing and Roncoli, Claudio and Zhang, Lihui and Lehe, Lewis},
+  year = 2022,
+  month = nov,
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  volume = {23},
+  number = {11},
+  pages = {21274--21290},
+  issn = {1558-0016},
+  doi = {10.1109/TITS.2022.3173515},
+  corres={Hu, Simon and Wang, Yibing}
+  abstract={The dynamic spatiotemporal characteristics of queues at urban intersections are crucial to traffic operation tasks such as signal performance measure and signal optimization. This paper addresses the high time-resolution estimation of queue profile at urban signalized intersection using Extended Kalman Filtering (EKF) with data of connected vehicles (CVs). The main features of this work are as follows: (i) a machine learning method was applied to construct a dynamic shockwave propagation model based on shockwave theory and historical data of CVs; (ii) a heuristic approach was proposed to measure the shockwave speed for use in EKF; (iii) an urban queue estimator was designed to combine the dynamic shockwave propagation model and real-time shockwave information via EKF to deliver secondby-second queue profile estimates. The queue estimator does not require any priori information about vehicle arrival patterns and the market penetration rate (MPR) of CVs. The performance and robustness of the queue estimator were evaluated using both simulation and real-world CV data. The results show that the method can provide satisfactory queue estimation results at various MPR levels of CVs, with the estimation error of 2.5 vehicles at the MPR of 5%, and of 0.5 vehicle at the MPR of 40%.},
+  url={https://ieeexplore.ieee.org/document/9780260},
+  code={},
+  cover={images/paper_cover/ekf4q.png}
 }
 

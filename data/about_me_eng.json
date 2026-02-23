@@ -15,13 +15,39 @@
   "notice": [
     {
       "title": "Recruiting Graduate Students",
-      "body": "We welcome applications from students interested in transportation planning, intelligent transportation systems, and related areas (M.S. / Ph.D.). Please send your CV and a brief statement of research interests to the email above."
+      "body": "We welcome applications from students interested in transportation planning, intelligent transportation systems, and related areas (M.S.). Please send your CV and a brief statement of research interests to the email above."
     }
   ],
   "news": [
-    {"date": "2026.03", "title": "Defended PhD Dissertation", "body": "Completed PhD dissertation defense."},
-    {"date": "2025.02", "title": "Joining Jilin University", "body": "As Tang Aoqing Young Scholar (Associate Professor)."},
-    {"date": "2024.10", "title": "Returned from ETH Zurich", "body": "Completed visiting Ph.D. at ETH Zurich and returned."},
-    {"date": "2023.10", "title": "Started Visiting PhD at ETH Zurich", "body": "Started visiting PhD at ETH Zurich."}
+    {
+      "date": "2026/03",
+      "title": "PhD defense",
+      "body": "Completed PhD dissertation defense."
+    },
+    {
+      "date": "2026/09/12",
+      "title": "Paper accepted",
+      "body": "Paper \"Network-Wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach\" accepted by IEEE Transactions on Intelligent Transportation Systems 🎉"
+    },
+    {
+      "date": "2026/02/26",
+      "title": "Paper accepted",
+      "body": "Paper \"MoGERNN: An Inductive Traffic Predictor for Unobserved Locations\" accepted by Transportation Research Part C: Emerging Technologies 🎉"
+    },
+    {
+      "date": "2024/12/16",
+      "title": "Paper accepted",
+      "body": "Paper \"CASAformer: Congestion-aware Sparse Attention Transformer for Traffic Speed Prediction\" accepted by Communications in Transportation Research 🎉"
+    },
+    {
+      "date": "2024/10",
+      "title": "Completed visiting PhD at ETH Zurich",
+      "body": "Completed the joint Ph.D. program at ETH Zurich and returned."
+    },
+    {
+      "date": "2023/10",
+      "title": "Started visiting PhD at ETH Zurich",
+      "body": "Started the joint Ph.D. program at ETH Zurich."
+    }
   ]
 }

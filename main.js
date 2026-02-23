@@ -198,8 +198,8 @@
     var first = p.slice(comma + 1).trim();
     var initials = first.split(/\s+/).map(function (w) {
       var c = w.charAt(0).toUpperCase();
-      return c ? (c + (w.slice(-1) === '.' ? '' : '.')) : '';
-    }).join('.');
+      return c ? c + '.' : '';
+    }).join('');
     return last + ', ' + initials;
   }
 
@@ -378,7 +378,7 @@
         li.setAttribute('data-detail-id', i);
         li.setAttribute('data-paper-index', i);
         var cit = formatCitationElsevier(p);
-        var citationHtml = (cit.authorHtml ? cit.authorHtml + ' ' : '') + escapeHtml(cit.rest);
+        var citationHtml = (cit.authorHtml ? cit.authorHtml + ', ' : '') + escapeHtml(cit.rest);
         li.innerHTML = '<div class="citation-row"><span class="citation-text">' + citationHtml + '</span><div class="citation-actions">' + actions + '</div></div>';
         citeListEl.appendChild(li);
       });
@@ -1174,6 +1174,9 @@
     applyCitePending();
     setLang(currentLang);
     bindPaperLikeButtons();
+  });
+
+  loadActivities().then(function () {
   });
 
   loadActivities().then(function () {

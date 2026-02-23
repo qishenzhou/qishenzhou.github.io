@@ -6,11 +6,11 @@
   "intro": "浙江大学 博士研究生（智能交通所）2020/09–至今；苏黎世联邦理工大学 联合培养博士生 2023/11–2024/10；华中科技大学 交通工程学士（土木工程与水利学院）2016/09–2020/06；新南威尔士大学 访问学生 2019/07–2019/08。",
   "interests": "数据驱动的大规模路网全域交通状态估计、预测及可信性研究。",
   "links": {
-      "email": "mailto:qishenzhou@intl.zju.edu.cn",
-      "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
-      "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
-      "github": "https://github.com/qishenzhou",
-      "orcid": ""
+    "email": "mailto:qishenzhou@intl.zju.edu.cn",
+    "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
+    "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
+    "github": "https://github.com/qishenzhou",
+    "orcid": ""
   },
   "notice": [
     {
@@ -19,9 +19,35 @@
     }
   ],
   "news": [
-    {"date": "2026.03", "title": "毕业答辩", "body": "完成博士学位论文答辩。"},
-    {"date":"2025.02","title":"论文接收","body":"CASAformer: Congestion-aware Sparse Attention Transformer for Traffic Speed Prediction 被 Communications in Transportation Research 接收。"},
-    {"date": "2024.10", "title": "结束苏黎世联邦理工大学联合培养", "body": "完成苏黎世联邦理工大学联合培养博士生项目回国。"},
-    {"date": "2023.10","title":"开始苏黎世联邦理工大学联合培养","body":"前往苏黎世联邦理工大学联合培养博士生项目。"}
+    {
+      "date": "2026/03",
+      "title": "毕业答辩",
+      "body": "完成博士学位论文答辩。"
+    },
+    {
+      "date": "2026/09/12",
+      "title": "论文接收",
+      "body": "论文《Network-Wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach》 被 IEEE Transactions on Intelligent Transportation Systems 接收🎉"
+    },
+    {
+      "date": "2026/02/26",
+      "title": "论文接收",
+      "body": "论文《MoGERNN: An Inductive Traffic Predictor for Unobserved Locations》 被 Transportation Research Part C: Emerging Technologies 接收🎉"
+    },
+    {
+      "date": "2024/12/16",
+      "title": "论文接收",
+      "body": "论文《CASAformer: Congestion-aware Sparse Attention Transformer for Traffic Speed Prediction》 被 Communications in Transportation Research 接收🎉"
+    },
+    {
+      "date": "2024/10",
+      "title": "结束ETH Zurich联合培养",
+      "body": "完成苏黎世联邦理工大学联合培养博士生项目回国。"
+    },
+    {
+      "date": "2023/10",
+      "title": "开始ETH Zurich联合培养",
+      "body": "前往苏黎世联邦理工大学联合培养博士生项目。"
+    }
   ]
 }
