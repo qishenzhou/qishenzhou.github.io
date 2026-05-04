@@ -1,12 +1,12 @@
 {
   "name": "周启申",
-  "title": "唐敖庆青年学者 · 副教授",
+  "title": "副教授 · 唐敖庆青年学者",
   "org": "吉林大学交通学院｜交通信息工程及控制系",
   "org_url": "https://jt.jlu.edu.cn/index.htm",
-  "intro": "浙江大学 博士研究生（智能交通所）2020/09–至今；苏黎世联邦理工大学 联合培养博士生 2023/11–2024/10；华中科技大学 交通工程学士（土木工程与水利学院）2016/09–2020/06；新南威尔士大学 访问学生 2019/07–2019/08。",
-  "interests": "数据驱动的大规模路网全域交通状态估计、预测及可信性研究。",
+  "intro": "周启申博士现为吉林大学交通学院副教授、唐敖庆青年学者。博士毕业于浙江大学道路与交通工程专业，本科毕业于华中科技大学交通工程专业。博士期间曾于苏黎世联邦理工学院（ETH Zurich）联合培养一年。研究团队与浙江大学、香港城市大学、苏黎世联邦理工学院保持紧密合作。",
+  "interests": "人工智能赋能交通、可信交通感知与预测、智能网联交通控制",
   "links": {
-    "email": "mailto:qishenzhou@intl.zju.edu.cn",
+    "email": "mailto:qishenzhou@jlu.edu.cn",
     "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
     "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
     "github": "https://github.com/qishenzhou",
@@ -15,29 +15,45 @@
   "notice": [
     {
       "title": "招收研究生",
-      "body": "欢迎对交通规划、智能交通等方向感兴趣的同学报考硕士。请将简历与简要研究兴趣说明发送至上方邮箱。"
+      "body": "欢迎研究兴趣相近的同学报考硕士研究生，请将简历和自荐信发送至上方邮箱。"
     }
   ],
   "news": [
     {
-      "date": "2026/03",
-      "title": "毕业答辩",
-      "body": "完成博士学位论文答辩。"
+      "date": "2026/04/30",
+      "title": "论文接收",
+      "body": "论文《Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data》被第十届交通网络韧性国际研讨会（INSTR 2026）接收，里昂见！🎉"
     },
     {
-      "date": "2026/09/12",
+      "date": "2026/04/14",
       "title": "论文接收",
-      "body": "论文《Network-Wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach》 被 IEEE Transactions on Intelligent Transportation Systems 接收🎉"
+      "body": "论文《ORThought: Benchmarking and Automating Logistics Optimization Modeling via Structured LLM Reasoning》被 Artificial Intelligence for Transportation 接收！🎉"
     },
     {
-      "date": "2026/02/26",
+      "date":"2026/04/09",
+      "title": "入职吉林大学交通学院",
+      "body": "以唐敖庆青年学者（副教授）身份加入吉林大学交通学院，开始新的学术生涯！🎉"
+    },
+    {
+      "date": "2026/03/05",
+      "title": "博士学位论文答辩",
+      "body": "完成博士学位论文答辩，论文题目为《稀疏数据驱动的全域交通状态韧性化推断与不确定性量化》！🎉",
+      "image": "images/news/phd_journey.png"
+    },
+    {
+      "date": "2025/09/12",
       "title": "论文接收",
-      "body": "论文《MoGERNN: An Inductive Traffic Predictor for Unobserved Locations》 被 Transportation Research Part C: Emerging Technologies 接收🎉"
+      "body": "论文《Network-Wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach》 被 IEEE Transactions on Intelligent Transportation Systems 接收！🎉"
+    },
+    {
+      "date": "2025/02/26",
+      "title": "论文接收",
+      "body": "论文《MoGERNN: An Inductive Traffic Predictor for Unobserved Locations》 被 Transportation Research Part C: Emerging Technologies 接收！🎉"
     },
     {
       "date": "2024/12/16",
       "title": "论文接收",
-      "body": "论文《CASAformer: Congestion-aware Sparse Attention Transformer for Traffic Speed Prediction》 被 Communications in Transportation Research 接收🎉"
+      "body": "论文《CASAformer: Congestion-aware Sparse Attention Transformer for Traffic Speed Prediction》 被 Communications in Transportation Research 接收！🎉"
     },
     {
       "date": "2024/10",
@@ -47,7 +63,7 @@
     {
       "date": "2023/10",
       "title": "开始ETH Zurich联合培养",
-      "body": "前往苏黎世联邦理工大学联合培养博士生项目。"
+      "body": "开始苏黎世联邦理工大学联合培养博士生项目。"
     }
   ]
 }

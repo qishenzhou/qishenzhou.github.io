@@ -1,3 +1,21 @@
+@article{yang2026ORThought,
+  title = {{{ORThought}}: Benchmarking and Automating Logistics Optimization Modeling via Structured {{LLM}} Reasoning},
+  shorttitle = {{{ORThought}}},
+  author = {Yang, Beinuo and Zhou, Qishen and Li, Junyi and Su, Chenxing and Angeloudis, Panagiotis and Hu, Simon},
+  year = 2026,
+  month = April,
+  journal = {Artificial Intelligence for Transportation},
+  volume = {6},
+  pages = {100059},
+  issn = {3050-8606},
+  doi = {10.1016/j.ait.2026.100059},
+  url = {https://doi.org/10.1016/j.ait.2026.100059},
+  code = {https://github.com/ZJU-TSELab/ORThought},
+  abstract = {Optimization modeling stands as the engine of scientific decision-making in logistics and transportation, yet its adoption is hindered by a steep expertise threshold and the latency of manual workflows. Automating this process via Large Language Models (LLMs) offers a potential solution, but current approaches face critical bottlenecks: (i) a lack of high-quality, complex benchmarks; (ii) methodological inefficiencies in autonomous multi-agent frameworks, which often exhibit instability and redundant computation; and (iii) evaluations that lack diagnostic depth. In this work, we address these challenges from the following three aspects. First, we introduce LogiOR, a diverse logistics benchmark with rigorous annotations, and enrich existing datasets with the same annotation standard to support community utilization. Second, we propose ORThought, a structured dual-agent framework. By incorporating expert-level modeling principles via chain-of-thought reasoning, ORThought eliminates the redundancy of uncontrolled autonomous agents. Third, extensive empirical evaluations demonstrate that ORThought consistently outperforms state-of-the-art baselines by 9–17 percentage points, exhibiting distinct advantages in handling complex constraints while maintaining high token efficiency. Building on these results, we further conduct a multidimensional error analysis, which identifies key failure modes and success factors, providing actionable insights for future research. The dataset and code are available at [Hugging Face](https://huggingface.co/datasets/LabMem012/LogiOR) and [GitHub](https://github.com/ZJU-TSELab/ORThought), respectively.},
+  cover = {images/paper_cover/orthought.png},
+  corres = {Zhou, Qishen and Hu, Simon}
+}
+
 @article{zhou2025NetworkWidea,
   title = {Network-{{Wide Freeway Traffic Estimation Using Sparse Sensor Data}}: {{A Dirichlet Graph Auto-Encoder Approach}}},
   shorttitle = {Network-{{Wide Freeway Traffic Estimation Using Sparse Sensor Data}}},
@@ -9,11 +27,10 @@
   number = {12},
   pages = {22161--22177},
   issn = {1558-0016},
-  doi = {10.1109/TITS.2025.3610911}
-  abstract = {},
+  doi = {10.1109/TITS.2025.3610911},
   url={https://ieeexplore.ieee.org/document/11202667},
   code={},
-  abstract = {Network-wide Traffic State Estimation (TSE), which aims to infer a complete image of network traffic states with sparsely deployed sensors, plays a vital role in intelligent transportation systems. With the development of data-driven methods, traffic dynamics modeling has advanced significantly. However, TSE poses fundamental challenges for data-driven approaches, since historical patterns cannot be learned locally at sensor-free segments. Although graph representation learning shows promise in estimating states at locations without sensors, existing methods typically handle unobserved locations by filling them with zeros, introducing bias to the sensitive graph message propagation. The recently proposed Dirichlet Energy-based Feature Propagation (DEFP) method achieves State-Of-The-Art (SOTA) performance in unobserved node classification by eliminating the need for zero-filling. However, applying it to TSE faces three key challenges: inability to handle directed traffic networks, strong assumptions in traffic spatial correlation modeling, and overlooking distinct propagation rules of different patterns (e.g., congestion and free flow). We propose DGAE, a novel inductive graph representation model that addresses these challenges through theoretically derived DEFP for Directed graph (DEFP4D), enhanced spatial representation learning via DEFP4D-guided latent space encoding, and physics-guided propagation mechanisms that separately handle congested and free-flow patterns. Experiments on three traffic datasets demonstrate that DGAE outperforms existing SOTA methods and exhibits strong cross-city transferability. Furthermore, DEFP4D can serve as a standalone lightweight solution, showing superior performance under extremely sparse sensor conditions.}
+  abstract = {Network-wide Traffic State Estimation (TSE), which aims to infer a complete image of network traffic states with sparsely deployed sensors, plays a vital role in intelligent transportation systems. With the development of data-driven methods, traffic dynamics modeling has advanced significantly. However, TSE poses fundamental challenges for data-driven approaches, since historical patterns cannot be learned locally at sensor-free segments. Although graph representation learning shows promise in estimating states at locations without sensors, existing methods typically handle unobserved locations by filling them with zeros, introducing bias to the sensitive graph message propagation. The recently proposed Dirichlet Energy-based Feature Propagation (DEFP) method achieves State-Of-The-Art (SOTA) performance in unobserved node classification by eliminating the need for zero-filling. However, applying it to TSE faces three key challenges: inability to handle directed traffic networks, strong assumptions in traffic spatial correlation modeling, and overlooking distinct propagation rules of different patterns (e.g., congestion and free flow). We propose DGAE, a novel inductive graph representation model that addresses these challenges through theoretically derived DEFP for Directed graph (DEFP4D), enhanced spatial representation learning via DEFP4D-guided latent space encoding, and physics-guided propagation mechanisms that separately handle congested and free-flow patterns. Experiments on three traffic datasets demonstrate that DGAE outperforms existing SOTA methods and exhibits strong cross-city transferability. Furthermore, DEFP4D can serve as a standalone lightweight solution, showing superior performance under extremely sparse sensor conditions.},
   code={https://github.com/ZJU-TSELab/DGAE},
   cover={images/paper_cover/dgae.png},
   corres={Hu, Simon}
@@ -33,7 +50,7 @@
   abstract = {Given a partially observed road network, how can we predict the traffic state of interested unobserved locations? Traffic prediction is crucial for advanced traffic management systems, with deep learning approaches showing exceptional performance. However, most existing approaches assume sensors are deployed at all locations of interest, which is impractical due to financial constraints. Furthermore, these methods are typically fragile to structural changes in sensing networks, which require costly retraining even for minor changes in sensor configuration. To address these challenges, we propose MoGERNN, an inductive spatio-temporal graph model with two key components: (i) a Mixture of Graph Experts (MoGE) with sparse gating mechanisms that dynamically route nodes to specialized graph aggregators, capturing heterogeneous spatial dependencies efficiently; (ii) a graph encoder-decoder architecture that leverages these embeddings to capture both spatial and temporal dependencies for comprehensive traffic state prediction. Experiments on two real-world datasets show MoGERNN consistently outperforms baseline methods for both observed and unobserved locations. MoGERNN can accurately predict congestion evolution even in areas without sensors, offering valuable information for traffic management. Moreover, MoGERNN is adaptable to the changes of sensor network, maintaining competitive performance even compared to its retrained counterpart. Tests performed with different numbers of available sensors confirm its consistent superiority, and ablation studies validate the effectiveness of its key modules.},
   url={https://linkinghub.elsevier.com/retrieve/pii/S0968090X25000841},
   code={https://github.com/ZJU-TSELab/MoGERNN},
-  corres={Hu, Simon}
+  corres={Hu, Simon},
   cover={images/paper_cover/mogernn.png}
 }
 
@@ -50,8 +67,8 @@
   issn = {2772-4247},
   doi = {10.1016/j.commtr.2025.100174},
   url={https://www.sciencedirect.com/science/article/pii/S2772424725000149},
-  code={https://gith ub.com/Yifanny/CASAformer},
-  abstract={Accurate and efficient traffic speed prediction is crucial for improving roaDongguand safety and efficiency. With the emerging deep learning and extensive traffic data, data-driven methods are widely adopted to achieve this task with increasingly complicated structures and progressively deeper layers of neural networks. Despite the design of the models, they aim to optimize the overall average performance without discriminating against different traffic states. However, the fact is that predicting the traffic speed under congestion is normally more important than under free flow since the downstream tasks, such as traffic control and optimization, are more interested in congestion rather than free flow. Most of the State-Of-The-Art (SOTA) models unfortunately do not differentiate between the traffic states during training and evaluation. To this end, we first comprehensively study the performance of the SOTA models under different speed regimes to illustrate the low accuracy of low-speed prediction. We further propose and design a novel Congestion-Aware Sparse Attention transformer (CASAformer) to enhance the prediction performance under low-speed traffic conditions. Specifically, the CASA layer emphasizes the congestion data and reduces the impact of free-flow data. Moreover, we adopt a new congestion adaptive loss function for training to make the model learn more from the congestion data. Extensive experiments on real-world datasets show that our CASAformer outperforms the SOTA models for predicting speed under 40 mph in all prediction horizons.},
+  code={https://github.com/Yifanny/CASAformer},
+  abstract={Accurate and efficient traffic speed prediction is crucial for improving road safety and efficiency. With the emerging deep learning and extensive traffic data, data-driven methods are widely adopted to achieve this task with increasingly complicated structures and progressively deeper layers of neural networks. Despite the design of the models, they aim to optimize the overall average performance without discriminating against different traffic states. However, the fact is that predicting the traffic speed under congestion is normally more important than under free flow since the downstream tasks, such as traffic control and optimization, are more interested in congestion rather than free flow. Most of the State-Of-The-Art (SOTA) models unfortunately do not differentiate between the traffic states during training and evaluation. To this end, we first comprehensively study the performance of the SOTA models under different speed regimes to illustrate the low accuracy of low-speed prediction. We further propose and design a novel Congestion-Aware Sparse Attention transformer (CASAformer) to enhance the prediction performance under low-speed traffic conditions. Specifically, the CASA layer emphasizes the congestion data and reduces the impact of free-flow data. Moreover, we adopt a new congestion adaptive loss function for training to make the model learn more from the congestion data. Extensive experiments on real-world datasets show that our CASAformer outperforms the SOTA models for predicting speed under 40 mph in all prediction horizons.},
   cover={images/paper_cover/casaf.png},
   corres={Zhang, Yifan}
 }
@@ -70,7 +87,7 @@
   url={https://ieeexplore.ieee.org/document/10440155},
   abstract={Deep Reinforcement Learning has shown some promise in dynamic traffic signal control by adapting to real-time traffic conditions. However, multi-intersection control presents challenges, primarily due to the need for efficient information exchange across increasing intersections, and the importance of spatiotemporal dynamics in traffic flows. Traditional methods often focus solely on spatial or temporal aspects, leading to suboptimal control strategies. This paper introduces a novel Multi-Agent Incentive Communication Deep Reinforcement Learning (MICDRL) method, designed for collaborative control across multiple intersections. MICDRL features an incentive communication mechanism, allowing agents to generate customized messages that influence other agents’ policies, thereby enhancing coordination and achieving globally optimal decisions. A key feature of MICDRL is its reliance on local information for message generation, effectively reducing communication overhead while ensuring collaboration. Additionally, MICDRL integrates a teammate module that leverages temporal data for predicting other agents’ actions, crucial for understanding collective dynamics and spatial environment characteristics. Empirical results show that MICDRL outperforms several state-of-the-art methods in metrics like queue length and throughput. Furthermore, we introduce a tailored three-layer Internet-of-Things architecture to enhance data collection and transmission.},
   code={},
-  cover={images/paper_cover/coo.png}
+  cover={images/paper_cover/coo.png},
   corres={Hu, Simon}
 }
 
@@ -87,7 +104,7 @@
   pages = {104320},
   issn = {0968-090X},
   doi = {10.1016/j.trc.2023.104320},
-  corres={Hu, Simon}
+  corres={Hu, Simon},
   abstract={This paper presents a safety-enhanced eco-driving strategy for connected and autonomous vehicles (CAVs), which is implemented by a hierarchical and distributed framework. The driving risk field, shockwave theory, and motion planning and control method are integrated into this framework to optimize the trajectories of CAVs on a signalized arterial under mixed traffic flow, with the aim of reducing the driving risk and fuel consumption of CAVs simultaneously, while ensuring traffic efficiency. The optimization procedure is mainly composed of two parts: long-term trajectory planning based on optimal control and short-term trajectory control based on model predictive control, which makes the strategy more adaptable to the various traffic conditions. The results show that the proposed framework can effectively reduce the safety risk that vehicles are exposed to and their fuel consumption by 18%–24% and 20%–27%, respectively. Furthermore, it reveals that conventional eco-driving strategies may result in negative safety issues when only considering the impact of preceding vehicles on the eco-CAV. However, these negative impacts can be eliminated when the impacts of following vehicles on the eco-CAV are taken into account. In addition, the sensitivity analysis on the Market Penetration Rate (MPR) of CAVs and traffic demand is performed. The results show that the framework is robust and can work under various traffic conditions (including under-saturated and over-saturated ones) and different MPRs.},
   url={https://www.sciencedirect.com/science/article/pii/S0968090X23003091},
   code={},
@@ -105,10 +122,78 @@
   pages = {21274--21290},
   issn = {1558-0016},
   doi = {10.1109/TITS.2022.3173515},
-  corres={Hu, Simon and Wang, Yibing}
-  abstract={The dynamic spatiotemporal characteristics of queues at urban intersections are crucial to traffic operation tasks such as signal performance measure and signal optimization. This paper addresses the high time-resolution estimation of queue profile at urban signalized intersection using Extended Kalman Filtering (EKF) with data of connected vehicles (CVs). The main features of this work are as follows: (i) a machine learning method was applied to construct a dynamic shockwave propagation model based on shockwave theory and historical data of CVs; (ii) a heuristic approach was proposed to measure the shockwave speed for use in EKF; (iii) an urban queue estimator was designed to combine the dynamic shockwave propagation model and real-time shockwave information via EKF to deliver secondby-second queue profile estimates. The queue estimator does not require any priori information about vehicle arrival patterns and the market penetration rate (MPR) of CVs. The performance and robustness of the queue estimator were evaluated using both simulation and real-world CV data. The results show that the method can provide satisfactory queue estimation results at various MPR levels of CVs, with the estimation error of 2.5 vehicles at the MPR of 5%, and of 0.5 vehicle at the MPR of 40%.},
+  corres={Hu, Simon and Wang, Yibing},
+  abstract={The dynamic spatiotemporal characteristics of queues at urban intersections are crucial to traffic operation tasks such as signal performance measure and signal optimization. This paper addresses the high time-resolution estimation of queue profile at urban signalized intersection using Extended Kalman Filtering (EKF) with data of connected vehicles (CVs). The main features of this work are as follows: (i) a machine learning method was applied to construct a dynamic shockwave propagation model based on shockwave theory and historical data of CVs; (ii) a heuristic approach was proposed to measure the shockwave speed for use in EKF; (iii) an urban queue estimator was designed to combine the dynamic shockwave propagation model and real-time shockwave information via EKF to deliver second-by-second queue profile estimates. The queue estimator does not require any priori information about vehicle arrival patterns and the market penetration rate (MPR) of CVs. The performance and robustness of the queue estimator were evaluated using both simulation and real-world CV data. The results show that the method can provide satisfactory queue estimation results at various MPR levels of CVs, with the estimation error of 2.5 vehicles at the MPR of 5%, and of 0.5 vehicle at the MPR of 40%.},
   url={https://ieeexplore.ieee.org/document/9780260},
   code={},
   cover={images/paper_cover/ekf4q.png}
+}
+
+@inproceedings{chen2025Urban,
+  title = {Urban {{Traffic Carbon Emission Modelling}} via {{Random Forest}}: {{Feature Importance}} and {{Effects}} of {{Sensors}}},
+  booktitle = {2025 {{IEEE}} 28th {{International Conference}} on {{Intelligent Transportation Systems}} ({{ITSC}})},
+  author = {Chen, Hongxu and Zhou, Qishen and Zhang, Bugao and Liu, Hongjun and Cai, Zhengyi and Zhu, Zheng and Hu, Simon},
+  year = 2025,
+  month = nov,
+  pages = {263--268},
+  issn = {2153-0017},
+  doi = {10.1109/ITSC60802.2025.11423015},
+  url = {https://doi.org/10.1109/ITSC60802.2025.11423015},
+  code = {},
+  corres = {Hu, Simon}
+}
+
+@inproceedings{ming2025Impact,
+  title = {Impact of {{Eco-Driving}} on {{Traffic Performance}} at {{Signalized Intersections}}: {{Blockage}} and {{Spillover}}},
+  booktitle = {2025 {{IEEE}} 28th {{International Conference}} on {{Intelligent Transportation Systems}} ({{ITSC}})},
+  author = {Ming, Zhuang and Zhou, Qishen and Na, Xiaoxiang and Jin, Sheng and Ma, Dongfang and Hu, Simon},
+  year = 2025,
+  month = nov,
+  pages = {2187--2192},
+  issn = {2153-0017},
+  doi = {10.1109/ITSC60802.2025.11423584},
+  url = {https://doi.org/10.1109/ITSC60802.2025.11423584},
+  code = {},
+  corres = {Hu, Simon}
+}
+
+@inproceedings{yeModelingManagingOnDemand2022,
+  title = {Modeling and {{Managing}} an {{On-Demand Meal Delivery System}} with {{Mixed Autonomy}}},
+  booktitle = {2022 {{IEEE}} 25th {{International Conference}} on {{Intelligent Transportation Systems}} ({{ITSC}})},
+  author = {Ye, Anke and Zhou, Qishen and Liu, Xin and Zhang, Yu and Tao, Zhuge and Li, Jun and Bell, Michael G.H. and Bhattacharjya, Jyotirmoyee and Ben, Shenglin and Chen, Xiqun and Hu, Simon},
+  year = 2022,
+  month = oct,
+  pages = {2007--2012},
+  doi = {10.1109/ITSC55140.2022.9921849},
+  url = {https://doi.org/10.1109/ITSC55140.2022.9921849},
+  code = {},
+  corres = {Hu, Simon}
+}
+
+@inproceedings{zhang2022ShortTerm,
+  title = {Short-{{Term Traffic Prediction}} with {{Balanced Domain Adaptation}}},
+  booktitle = {CICTP 2022},
+  author = {Zhang, Kaihang and Li, Junyi and Zhou, Qishen and Hu, Simon},
+  year = 2022,
+  month = sep,
+  pages = {699--711},
+  publisher = {American Society of Civil Engineers},
+  doi = {10.1061/9780784484265.066},
+  url = {https://doi.org/10.1061/9780784484265.066},
+  code = {},
+  corres = {Hu, Simon}
+}
+
+@inproceedings{zhouQueueProfileIdentification2021,
+  title = {Queue {{Profile Identification}} at {{Signalized Intersections}} with {{High-Resolution Data}} from {{Drones}}},
+  booktitle = {2021 7th {{International Conference}} on {{Models}} and {{Technologies}} for {{Intelligent Transportation Systems}} ({{MT-ITS}})},
+  author = {Zhou, Qishen and Mohammadi, Roozbeh and Zhao, Weiming and Zhang, Kaihang and Zhang, Lihui and Wang, Yibing and Roncoli, Claudio and Hu, Simon},
+  year = 2021,
+  month = jun,
+  pages = {1--6},
+  doi = {10.1109/MT-ITS49943.2021.9529337},
+  url = {https://doi.org/10.1109/MT-ITS49943.2021.9529337},
+  code = {},
+  corres = {Hu, Simon}
 }
 

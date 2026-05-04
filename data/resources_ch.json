@@ -1,7 +1,8 @@
 [
   {
-    "title": "敬请期待",
-    "body": "...",
-    "link": "敬请期待"
+    "title": "MMTD：大都市尺度多源交通数据",
+    "body": "面向深度学习和交通状态推断的大规模多源交通数据集，融合固定检测器与浮动车数据，并统一映射至同一路网上，为数据驱动交通动力学建模提供可复现基准。",
+    "repo": "https://github.com/qishenzhou/MMTD",
+    "bibtex": "@software{Zhou_MMTD_Metropolitan_Multi-source_2026,\nauthor = {Zhou, Qishen},\ntitle = {{MMTD: Metropolitan Multi-source Traffic Data}},\nurl = {https://github.com/qishenzhou/MMTD},\nyear = {2026}\n}"
   }
 ]

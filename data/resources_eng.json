@@ -1,7 +1,8 @@
 [
   {
-    "title": "to be added",
-    "body": "...",
-    "link": "to be added"
+    "title": "MMTD: Metropolitan Multi-source Traffic Data",
+    "body": "A large-scale, spatio-temporally aligned multi-source traffic dataset at metropolitan scale, built for deep learning and traffic state inference. MMTD standardizes heterogeneous fixed sensors and floating car data onto a unified road network, providing a reproducible benchmark for data-driven traffic dynamics modeling.",
+    "repo": "https://github.com/qishenzhou/MMTD",
+    "bibtex": "@software{Zhou_MMTD_Metropolitan_Multi-source_2026,\nauthor = {Zhou, Qishen},\ntitle = {{MMTD: Metropolitan Multi-source Traffic Data}},\nurl = {https://github.com/qishenzhou/MMTD},\nyear = {2026}\n}"
   }
 ]

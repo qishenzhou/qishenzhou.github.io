@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>个人主页 | Personal Homepage</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.loli.net" />
+  <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html#about" class="nav-link current" data-i18n="nav_about">关于</a>
-      <a href="research.html" class="nav-link" data-i18n="nav_research">研究成果</a>
-      <a href="projects.html" class="nav-link" data-i18n="nav_projects">研究项目</a>
-      <a href="team.html" class="nav-link" data-i18n="nav_team">研究团队</a>
-      <a href="activities.html" class="nav-link" data-i18n="nav_activities">学术活动</a>
-      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">摄影集</a>
+      <a href="index.html#about" class="nav-link current" data-i18n="nav_about">About</a>
+      <a href="research.html" class="nav-link" data-i18n="nav_research">Research</a>
+      <a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a>
+      <a href="team.html" class="nav-link" data-i18n="nav_team">Research Team</a>
+      <a href="activities.html" class="nav-link" data-i18n="nav_activities">Activities</a>
+      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a>
       <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
-        <span class="lang-option active" data-lang="zh">中</span>
+        <span class="lang-option" data-lang="zh">中</span>
         <span class="lang-divider">/</span>
-        <span class="lang-option" data-lang="en">EN</span>
+        <span class="lang-option active" data-lang="en">EN</span>
       </button>
     </nav>
   </header>
@@ -33,11 +33,11 @@
         <div class="about-grid">
           <div class="about-left">
             <div class="about-photo-wrap">
-              <img class="about-photo" src="about_me.jpg" alt="周启申" />
+              <img class="about-photo" src="about_me_circle.jpg" alt="周启申" />
             </div>
-            <h1 class="about-name" id="about-name">周启申</h1>
-            <p class="about-title" id="about-title">唐敖庆青年学者 · 副教授</p>
-            <p class="about-org"><a href="#" id="about-org-link" class="about-org-link" target="_blank" rel="noopener noreferrer">吉林大学交通学院｜交通信息工程及控制系</a></p>
+            <h1 class="about-name" id="about-name">Qishen Zhou</h1>
+            <p class="about-title" id="about-title">Tang Aoqing Young Scholar · Associate Professor</p>
+            <p class="about-org"><a href="#" id="about-org-link" class="about-org-link" target="_blank" rel="noopener noreferrer">School of Transportation, Jilin University | Department of Traffic Information Engineering and Control</a></p>
             <div class="about-links">
               <a href="#" class="about-link" data-link="email" aria-label="Email">
                 <span class="about-link-icon"><svg class="about-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
@@ -60,10 +60,10 @@
           <div class="about-content">
             <div class="about-me">
               <div class="about-me-content">
-                <h3 class="about-me-subtitle" data-i18n="intro_title">个人简介</h3>
+                <h3 class="about-me-subtitle" data-i18n="intro_title">Brief intro</h3>
                 <p class="lang-zh" id="about-intro-zh"></p>
                 <p class="lang-en hidden" id="about-intro-en"></p>
-                <h3 class="about-me-subtitle" data-i18n="about_me_interests">研究兴趣</h3>
+                <h3 class="about-me-subtitle" data-i18n="about_me_interests">Research interests</h3>
                 <p class="lang-zh" id="about-interests-zh"></p>
                 <p class="lang-en hidden" id="about-interests-en"></p>
               </div>
@@ -76,9 +76,9 @@
     <!-- 2. 公告（置顶 / 长期重要信息，如招学生） -->
     <section id="notice" class="section section-notice">
       <div class="container">
-        <h2 class="section-title" data-i18n="notice_title">公告</h2>
-        <p class="section-intro lang-zh">以下信息长期有效，欢迎关注。</p>
-        <p class="section-intro lang-en hidden">The following is kept up to date. Welcome to get in touch.</p>
+        <h2 class="section-title" data-i18n="notice_title">Announcements</h2>
+        <p class="section-intro lang-zh hidden">以下信息长期有效，欢迎关注。</p>
+        <p class="section-intro lang-en">The following is kept up to date. Welcome to get in touch.</p>
         <div class="notice-list" id="notice-list"></div>
       </div>
     </section>
@@ -86,7 +86,7 @@
     <!-- 3. News 近期动态（仅首页，无独立页） -->
     <section id="news" class="section section-news-home">
       <div class="container">
-        <h2 class="section-title" data-i18n="home_news_title">近期动态</h2>
+        <h2 class="section-title" data-i18n="home_news_title">News</h2>
         <div class="timeline" id="news-timeline"></div>
       </div>
     </section>
@@ -94,7 +94,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text" data-i18n="footer">© 2025 · 保留所有权利</p>
+      <p class="footer-text" data-i18n="footer">© 2025 · All rights reserved.</p>
     </div>
   </footer>
 

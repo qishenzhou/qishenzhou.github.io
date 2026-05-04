@@ -1,28 +1,13 @@
 [
   {
-    "date": "2022.01",
-    "title": "Presentation at TRB Annual Meeting",
+    "date": "2022/01",
+    "title": "Present at TRB Annual Meeting",
     "body": "101st Annual Meeting of Transportation Research Board, Washington DC. High-Resolution Queue Profile Estimation at Signalized Intersections Based on Extended Kalman Filter.",
-    "image": "images/activities/nice.JPG",
-    "children": [
-      {
-        "title": "Abstract",
-        "body": "High-resolution queue profile estimation at signalized intersections based on extended Kalman filter."
-      },
-      {
-        "title": "Conference",
-        "body": "TRB Annual Meeting official site and materials."
-      }
-    ]
+    "image": "images/activities/zqs-Poster for TRB-2022-Final.png"
   },
   {
-    "date": "2022.10",
-    "title": "IEEE ITSC Conference",
-    "body": "2022 IEEE 25th International Conference on Intelligent Transportation Systems. Modeling and Managing an On-Demand Meal Delivery System with Mixed Autonomy."
-  },
-  {
-    "date": "2021.06",
-    "title": "MT-ITS Conference",
+    "date": "2021/06",
+    "title": "Present at MT-ITS Conference",
     "body": "2021 7th International Conference on Models and Technologies for Intelligent Transportation Systems. Queue Profile Identification at Signalized Intersections with High-Resolution Data from Drones."
   }
 ]

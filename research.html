@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html class="js-lang-pending" lang="zh-CN">
+<html class="js-lang-pending" lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>研究成果 | Research</title>
+  <title>Research | Research</title>
   <style>html.js-lang-pending .site-header, html.js-lang-pending main, html.js-lang-pending .site-footer{visibility:hidden}</style>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.loli.net" />
+  <link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="page-detail">
   <header class="site-header">
     <nav class="nav">
-      <a href="index.html#about" class="nav-link" data-i18n="nav_about">关于</a>
-      <a href="research.html" class="nav-link current" data-i18n="nav_research">研究成果</a>
-      <a href="projects.html" class="nav-link" data-i18n="nav_projects">研究项目</a>
-      <a href="team.html" class="nav-link" data-i18n="nav_team">研究团队</a>
-      <a href="activities.html" class="nav-link" data-i18n="nav_activities">学术活动</a>
-      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">摄影集</a>
+      <a href="index.html#about" class="nav-link" data-i18n="nav_about">About</a>
+      <a href="research.html" class="nav-link current" data-i18n="nav_research">Research</a>
+      <a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a>
+      <a href="team.html" class="nav-link" data-i18n="nav_team">Research Team</a>
+      <a href="activities.html" class="nav-link" data-i18n="nav_activities">Activities</a>
+      <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a>
       <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">
-        <span class="lang-option active" data-lang="zh">中</span>
+        <span class="lang-option" data-lang="zh">中</span>
         <span class="lang-divider">/</span>
-        <span class="lang-option" data-lang="en">EN</span>
+        <span class="lang-option active" data-lang="en">EN</span>
       </button>
     </nav>
   </header>
@@ -30,20 +30,25 @@
   <main>
     <section class="section section-research section-full">
       <div class="container">
-        <h1 class="section-title page-title" data-i18n="research_title">研究成果</h1>
+        <h1 class="section-title page-title" data-i18n="research_title">Research</h1>
 
         <div class="research-tabs">
-          <button type="button" class="research-tab active" data-tab="papers" data-i18n="tab_papers">工作概览</button>
-          <button type="button" class="research-tab" data-tab="citations" data-i18n="tab_citations">文章列表</button>
-          <button type="button" class="research-tab" data-tab="resources" data-i18n="tab_resources">开放资源</button>
+          <button type="button" class="research-tab active" data-tab="papers" data-i18n="tab_papers">Work Overview</button>
+          <button type="button" class="research-tab" data-tab="journals" data-i18n="tab_journals">Journal Articles</button>
+          <button type="button" class="research-tab" data-tab="conferences" data-i18n="tab_conferences">Conference Papers</button>
+          <button type="button" class="research-tab" data-tab="resources" data-i18n="tab_resources">Open Resources</button>
         </div>
 
         <div class="research-panel active" id="panel-papers">
           <ul class="paper-list" id="paper-list"></ul>
         </div>
 
-        <div class="research-panel" id="panel-citations">
-          <ul class="citation-list" id="citation-list"></ul>
+        <div class="research-panel" id="panel-journals">
+          <ul class="citation-list" id="journal-list"></ul>
+        </div>
+
+        <div class="research-panel" id="panel-conferences">
+          <ul class="citation-list" id="conference-list"></ul>
         </div>
 
         <div class="research-panel" id="panel-resources">
@@ -55,7 +60,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-text" data-i18n="footer">© 2025 · 保留所有权利</p>
+      <p class="footer-text" data-i18n="footer">© 2025 · All rights reserved.</p>
     </div>
   </footer>
 

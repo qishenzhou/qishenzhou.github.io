@@ -1,12 +1,12 @@
 {
   "name": "Qishen Zhou",
-  "title": "Tang Aoqing Young Scholar · Associate Professor",
+  "title": "Associate Professor · \"Tang Aoqing\" Young Scholar",
   "org": "School of Transportation, Jilin University | Department of Traffic Information Engineering and Control",
   "org_url": "https://jt.jlu.edu.cn/en/index.htm",
-  "intro": "Ph.D. candidate, Zhejiang University (Intelligent Transportation), 2020/09–present; Visiting Ph.D., ETH Zurich, 2023/11–2024/10; B.S. in Traffic Engineering, Huazhong University of Science and Technology, 2016/09–2020/06; Visiting student, UNSW, 2019/07–2019/08.",
-  "interests": "Data-driven network-wide traffic state estimation, prediction, and reliability.",
+  "intro": "Dr. Qishen Zhou is an Associate Professor and \"Tang Aoqing\" Young Scholar in the School of Transportation, Jilin University. He received his Ph.D. degree in Transportation from Zhejiang University and earned his B.S. in Traffic Engineering from Huazhong University of Science and Technology. During his Ph.D. studies, he spent one year at ETH Zurich as a visiting scholar. His research group maintains close collaborations with Zhejiang University, City University of Hong Kong, and ETH Zurich.",
+  "interests": "AI-empowered transportation, trustworthy traffic estimation and prediction, traffic control based on connected and autonomous vehicles",
   "links": {
-    "email": "mailto:qishenzhou@intl.zju.edu.cn",
+    "email": "mailto:qishenzhou@jlu.edu.cn",
     "linkedin": "https://www.linkedin.com/in/qishen-zhou-b2ab5117b/",
     "scholar": "https://scholar.google.com/citations?user=efHHte0AAAAJ&hl",
     "github": "https://github.com/qishenzhou",
@@ -15,22 +15,38 @@
   "notice": [
     {
       "title": "Recruiting Graduate Students",
-      "body": "We welcome applications from students interested in transportation planning, intelligent transportation systems, and related areas (M.S.). Please send your CV and a brief statement of research interests to the email above."
+      "body": "We welcome students with related research interests to apply to the M.S. program. Please send your CV and a statement of purpose to the email above."
     }
   ],
   "news": [
     {
-      "date": "2026/03",
-      "title": "PhD defense",
-      "body": "Completed PhD dissertation defense."
+      "date": "2026/04/30",
+      "title": "Paper accepted",
+      "body": "Paper \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" accepted by the 10th International Symposium on Transport Network Resilience (INSTR 2026)! See you in Lyon 🎉"
     },
     {
-      "date": "2026/09/12",
+      "date": "2026/04/14",
+      "title": "Paper accepted",
+      "body": "Paper \"ORThought: Benchmarking and Automating Logistics Optimization Modeling via Structured LLM Reasoning\" accepted by Artificial Intelligence for Transportation 🎉"
+    },
+    {
+      "date":"2026/04/09",
+      "title": "Joined School of Transportation, Jilin University",
+      "body": "Started a new academic career at the School of Transportation, Jilin University as a \"Tang Aoqing\" Young Scholar (Associate Professor) 🎉"
+     },
+     {
+      "date": "2026/03/05",
+      "title": "PhD defense",
+      "body": "Completed PhD dissertation defense, with dissertation titled \"Resilient Inference and Uncertainty Quantification for Global Traffic State Using Sparse Data\" 🎉",
+      "image": "images/news/phd_journey.png"
+    },
+    {
+      "date": "2025/09/12",
       "title": "Paper accepted",
       "body": "Paper \"Network-Wide Freeway Traffic Estimation Using Sparse Sensor Data: A Dirichlet Graph Auto-Encoder Approach\" accepted by IEEE Transactions on Intelligent Transportation Systems 🎉"
     },
     {
-      "date": "2026/02/26",
+      "date": "2025/02/26",
       "title": "Paper accepted",
       "body": "Paper \"MoGERNN: An Inductive Traffic Predictor for Unobserved Locations\" accepted by Transportation Research Part C: Emerging Technologies 🎉"
     },
@@ -41,13 +57,13 @@
     },
     {
       "date": "2024/10",
-      "title": "Completed visiting PhD at ETH Zurich",
-      "body": "Completed the joint Ph.D. program at ETH Zurich and returned."
+      "title": "Completed Visiting Scholar at ETH Zurich",
+      "body": "Completed the visiting scholar program at ETH Zurich and returned."
     },
     {
       "date": "2023/10",
-      "title": "Started visiting PhD at ETH Zurich",
-      "body": "Started the joint Ph.D. program at ETH Zurich."
+      "title": "Started Visiting Scholar at ETH Zurich",
+      "body": "Started the visiting scholar program at ETH Zurich."
     }
   ]
 }
