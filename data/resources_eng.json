@@ -5,4 +5,11 @@
     "repo": "https://github.com/qishenzhou/MMTD",
     "bibtex": "@software{Zhou_MMTD_Metropolitan_Multi-source_2026,\nauthor = {Zhou, Qishen},\ntitle = {{MMTD: Metropolitan Multi-source Traffic Data}},\nurl = {https://github.com/qishenzhou/MMTD},\nyear = {2026}\n}"
   }
+,
+  {
+    "title": "LogiOR: Logistics Optimization Reasoning Benchmark",
+    "body": "LogiOR, a comprehensive benchmark dataset comprising 92 logistics and supply chain optimization problems, which was developed over two months under the guidance of three Operations Research (OR) experts. The problems are adapted from classical OR solver test datasets, textbook examples, research papers, and real-world applications. LogiOR covers a broad spectrum of optimization types including Linear Programming (LP), Integer Linear Programming (ILP), Mixed-Integer Linear Programming (MILP), and Nonlinear Programming (NLP). Each problem is equipped with standardized annotations including mathematical formulations, executable Gurobi implementation code, optimal solution, problem characteristics (type, size metrics). This enables comprehensive evaluation, facilitates peer verification, and provides rich supervisory signals for reasoning LLM training.",
+    "repo": "https://huggingface.co/datasets/LabMem012/LogiOR",
+    "bibtex": "@article{Yang_ORThought_2026,\nauthor = {Yang, Beinuo and Zhou, Qishen and Li, Junyi and Su, Chenxing and Angeloudis, Panagiotis and Hu, Simon},\ntitle = {{ORThought: Benchmarking and Automating Logistics Optimization Modeling via Structured LLM Reasoning}},\njournal = {Artificial Intelligence for Transportation},\nvolume = {6},\npages = {100059},\nyear = {2026},\ndoi = {10.1016/j.ait.2026.100059}\n}"
+  }
 ]

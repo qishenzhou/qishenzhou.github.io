@@ -5,4 +5,11 @@
     "repo": "https://github.com/qishenzhou/MMTD",
     "bibtex": "@software{Zhou_MMTD_Metropolitan_Multi-source_2026,\nauthor = {Zhou, Qishen},\ntitle = {{MMTD: Metropolitan Multi-source Traffic Data}},\nurl = {https://github.com/qishenzhou/MMTD},\nyear = {2026}\n}"
   }
+,
+  {
+    "title": "LogiOR：物流优化推理基准数据集",
+    "body": "LogiOR 是一个综合性基准数据集，包含 92 道物流与供应链优化问题，由三位运筹学（OR）专家历时两个月指导构建。问题来源广泛，涵盖经典 OR 求解器测试数据集、教材例题、学术论文及真实应用场景。LogiOR 覆盖多种优化类型，包括线性规划（LP）、整数线性规划（ILP）、混合整数线性规划（MILP）和非线性规划（NLP）。每道问题均配有标准化标注，内容包括数学模型、可执行的 Gurobi 实现代码、最优解及问题特征（类型、规模指标），便于全面评测、同行验证，并为推理型大语言模型训练提供丰富的监督信号。",
+    "repo": "https://huggingface.co/datasets/LabMem012/LogiOR",
+    "bibtex": "@article{Yang_ORThought_2026,\nauthor = {Yang, Beinuo and Zhou, Qishen and Li, Junyi and Su, Chenxing and Angeloudis, Panagiotis and Hu, Simon},\ntitle = {{ORThought: Benchmarking and Automating Logistics Optimization Modeling via Structured LLM Reasoning}},\njournal = {Artificial Intelligence for Transportation},\nvolume = {6},\npages = {100059},\nyear = {2026},\ndoi = {10.1016/j.ait.2026.100059}\n}"
+  }
 ]
