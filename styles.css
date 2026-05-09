@@ -1209,11 +1209,13 @@ button.paper-action {
   color: inherit;
 }
 
-.timeline-item.news-item {
+.timeline-item.news-item,
+.timeline-item.activity-item {
   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.timeline-item.news-item:hover {
+.timeline-item.news-item:hover,
+.timeline-item.activity-item:hover {
   transform: scale(1.02);
 }
 

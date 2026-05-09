@@ -503,9 +503,12 @@
     function renderCiteItem(p, i) {
       var actions = PAPER_ACTION_TPL.replace(/INDEX/g, i);
       var li = document.createElement('li');
-      li.className = 'citation-item detail-item';
-      li.setAttribute('data-detail-type', 'paper');
-      li.setAttribute('data-detail-id', i);
+      var isConference = p.entryType === 'inproceedings';
+      li.className = isConference ? 'citation-item' : 'citation-item detail-item';
+      if (!isConference) {
+        li.setAttribute('data-detail-type', 'paper');
+        li.setAttribute('data-detail-id', i);
+      }
       li.setAttribute('data-paper-index', i);
       var cit = formatCitationElsevier(p);
       var citationHtml = (cit.authorHtml ? cit.authorHtml + ', ' : '') + escapeHtml(cit.rest);
