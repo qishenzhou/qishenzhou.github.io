@@ -20,6 +20,11 @@
   ],
   "news": [
     {
+      "date": "2026/05/21",
+      "title": "Paper accepted",
+      "body": "Paper \"Digital Distortions: Auditing Bias in LLM-based Career Recommendations\" accepted by IEEE Intelligent Systems 🎉"
+    },
+    {
       "date": "2026/04/30",
       "title": "Paper accepted",
       "body": "Paper \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" accepted by the 10th International Symposium on Transport Network Resilience (INSTR 2026)! See you in Lyon 🎉"

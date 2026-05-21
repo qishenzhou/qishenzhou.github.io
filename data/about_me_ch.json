@@ -20,6 +20,11 @@
   ],
   "news": [
     {
+      "date": "2026/05/21",
+      "title": "论文接收",
+      "body": "论文《Digital Distortions: Auditing Bias in LLM-based Career Recommendations》被 IEEE Intelligent Systems 接收！🎉"
+    },
+    {
       "date": "2026/04/30",
       "title": "论文接收",
       "body": "论文《Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data》被第十届交通网络韧性国际研讨会（INSTR 2026）接收，里昂见！🎉"
