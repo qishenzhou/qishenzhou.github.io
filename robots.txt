@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://qishenzhou.github.io/sitemap.xml
+Sitemap: https://qishenzhou.github.io/sitemap.txt
