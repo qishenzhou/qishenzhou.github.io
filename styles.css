@@ -688,7 +688,7 @@ button.paper-action {
   cursor: pointer;
 }
 
-.citation-item.detail-item:hover {
+.citation-item:hover {
   transform: scale(1.02);
 }
 
