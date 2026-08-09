@@ -1,10 +1,98 @@
 [
-  "images/gallery/dali-2.jpg",
-  "images/gallery/dali.jpg",
-  "images/gallery/hutiao-1.jpg",
-  "images/gallery/jinyue-1.jpg",
-  "images/gallery/jinyue-2.jpg",
-  "images/gallery/jinyue-3.jpg",
-  "images/gallery/nice.JPG",
-  "images/gallery/shaxi.jpg"
+  {
+    "src": "images/gallery/dali-2.jpg",
+    "thumb": "images/gallery/thumbs/dali-2.jpg"
+  },
+  {
+    "src": "images/gallery/dali.jpg",
+    "thumb": "images/gallery/thumbs/dali.jpg"
+  },
+  {
+    "src": "images/gallery/dalian-1.JPG",
+    "thumb": "images/gallery/thumbs/dalian-1.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-2.JPG",
+    "thumb": "images/gallery/thumbs/dalian-2.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-3.JPG",
+    "thumb": "images/gallery/thumbs/dalian-3.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-4.JPG",
+    "thumb": "images/gallery/thumbs/dalian-4.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-5.JPG",
+    "thumb": "images/gallery/thumbs/dalian-5.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-6.JPG",
+    "thumb": "images/gallery/thumbs/dalian-6.JPG"
+  },
+  {
+    "src": "images/gallery/dalian-7.JPG",
+    "thumb": "images/gallery/thumbs/dalian-7.JPG"
+  },
+  {
+    "src": "images/gallery/hutiao-1.jpg",
+    "thumb": "images/gallery/thumbs/hutiao-1.jpg"
+  },
+  {
+    "src": "images/gallery/jinyue-1.jpg",
+    "thumb": "images/gallery/thumbs/jinyue-1.jpg"
+  },
+  {
+    "src": "images/gallery/jinyue-2.jpg",
+    "thumb": "images/gallery/thumbs/jinyue-2.jpg"
+  },
+  {
+    "src": "images/gallery/jinyue-3.jpg",
+    "thumb": "images/gallery/thumbs/jinyue-3.jpg"
+  },
+  {
+    "src": "images/gallery/lyon-1.JPG",
+    "thumb": "images/gallery/thumbs/lyon-1.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-2.jpg",
+    "thumb": "images/gallery/thumbs/lyon-2.jpg"
+  },
+  {
+    "src": "images/gallery/lyon-3.jpg",
+    "thumb": "images/gallery/thumbs/lyon-3.jpg"
+  },
+  {
+    "src": "images/gallery/lyon-4.JPG",
+    "thumb": "images/gallery/thumbs/lyon-4.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-5.JPG",
+    "thumb": "images/gallery/thumbs/lyon-5.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-6.JPG",
+    "thumb": "images/gallery/thumbs/lyon-6.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-7.JPG",
+    "thumb": "images/gallery/thumbs/lyon-7.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-9.JPG",
+    "thumb": "images/gallery/thumbs/lyon-9.JPG"
+  },
+  {
+    "src": "images/gallery/lyon-10.jpg",
+    "thumb": "images/gallery/thumbs/lyon-10.jpg"
+  },
+  {
+    "src": "images/gallery/nice.JPG",
+    "thumb": "images/gallery/thumbs/nice.JPG"
+  },
+  {
+    "src": "images/gallery/shaxi.jpg",
+    "thumb": "images/gallery/thumbs/shaxi.jpg"
+  }
 ]

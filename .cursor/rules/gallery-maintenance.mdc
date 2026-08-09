@@ -1,0 +1,22 @@
+---
+description: Gallery image maintenance workflow
+globs: images/gallery/**,data/gallery_list.json,scripts/build-gallery.js,main.js
+alwaysApply: false
+---
+
+# Gallery Maintenance
+
+When adding, removing, or renaming photos in `images/gallery/`, run:
+
+```bash
+node scripts/build-gallery.js
+```
+
+The script updates `data/gallery_list.json` and generates optimized thumbnails in `images/gallery/thumbs/`.
+
+Gallery rendering expects:
+
+- `src`: original image used for detail view and download.
+- `thumb`: thumbnail image used by the gallery grid.
+
+Do not edit `data/gallery_list.json` manually unless the script cannot be used.

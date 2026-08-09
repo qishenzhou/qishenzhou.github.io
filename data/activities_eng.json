@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026/07",
+    "title": "10th International Symposium on Transport Network Resilience - INSTR 2026",
+    "body": "Participated in the 10th International Symposium on Transport Network Resilience (INSTR 2026), held in Lyon, France, and presented the work \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\". The presentation PDF is available for [online preview](https://drive.google.com/file/d/1gdPNoG5PYkeWxQwx_S9P8o-wscktkFaN/view?usp=sharing).",
+    "image": "images/activities/INSTR-2026.png"
+  },
+  {
     "date": "2022/01",
     "title": "Present at TRB Annual Meeting",
     "body": "101st Annual Meeting of Transportation Research Board, Washington DC. High-Resolution Queue Profile Estimation at Signalized Intersections Based on Extended Kalman Filter.",

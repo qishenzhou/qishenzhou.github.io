@@ -580,8 +580,8 @@
           '<span class="timeline-title lang-en hidden">' + escapeHtml(a.title_en || '') + '</span>' +
         '</div>' +
         '<div class="timeline-content">' +
-          '<p class="lang-zh">' + escapeHtml(a.body_zh || a.title_zh) + '</p>' +
-          '<p class="lang-en hidden">' + escapeHtml(a.body_en || a.title_en) + '</p>' +
+          '<p class="lang-zh">' + linkifyText(a.body_zh || a.title_zh) + '</p>' +
+          '<p class="lang-en hidden">' + linkifyText(a.body_en || a.title_en) + '</p>' +
         '</div>' + imgBlock;
       container.appendChild(art);
     });
@@ -590,8 +590,10 @@
   function loadGallery() {
     return fetch('data/gallery_list.json').then(function (r) { return r.json(); }).then(function (paths) {
       galleryDetails.length = 0;
-      (paths || []).forEach(function (path, i) {
-        galleryDetails.push({ src: path, alt: '摄影 ' + (i + 1) });
+      (paths || []).forEach(function (item, i) {
+        var src = typeof item === 'string' ? item : item.src;
+        var thumb = typeof item === 'string' ? item : (item.thumb || item.src);
+        galleryDetails.push({ src: src, thumb: thumb, alt: '摄影 ' + (i + 1) });
       });
     }).catch(function () { galleryDetails.length = 0; });
   }
@@ -605,7 +607,7 @@
       div.className = 'gallery-item';
       div.setAttribute('data-detail-type', 'gallery');
       div.setAttribute('data-detail-id', i);
-      div.innerHTML = '<img src="' + escapeHtml(g.src) + '" alt="' + escapeHtml(g.alt) + '" />';
+      div.innerHTML = '<img src="' + escapeHtml(g.thumb || g.src) + '" alt="' + escapeHtml(g.alt) + '" loading="lazy" decoding="async" />';
       grid.appendChild(div);
       var img = div.querySelector('img');
       if (img) {
@@ -1133,7 +1135,7 @@
       var g = galleryDetails[id];
       var liked = getGalleryLiked()[id];
       var imgHtml = g.src
-        ? '<img src="' + escapeHtml(g.src) + '" alt="' + escapeHtml(g.alt) + '" />'
+        ? '<img src="' + escapeHtml(g.src) + '" alt="' + escapeHtml(g.alt) + '" decoding="async" />'
         : '<div class="detail-gallery-placeholder">' + escapeHtml(g.alt) + '</div>';
       var likeLabel = i18n[currentLang].gallery_like || '喜欢';
       var dlLabel = i18n[currentLang].gallery_download || '下载';
@@ -1223,7 +1225,7 @@
     while ((match = urlRe.exec(text)) !== null) {
       result += escapeHtml(text.slice(lastIndex, match.index));
       var url = match[0];
-      result += '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer" class="abstract-link">' + escapeHtml(url) + '</a>';
+      result += '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer nofollow" class="abstract-link">' + escapeHtml(url) + '</a>';
       lastIndex = match.index + url.length;
     }
     result += escapeHtml(text.slice(lastIndex));
@@ -1238,7 +1240,7 @@
     var match;
     while ((match = mdRe.exec(text)) !== null) {
       result += linkifyBareUrls(text.slice(lastIndex, match.index));
-      result += '<a href="' + escapeHtml(match[2]) + '" target="_blank" rel="noopener noreferrer" class="abstract-link">' + escapeHtml(match[1]) + '</a>';
+      result += '<a href="' + escapeHtml(match[2]) + '" target="_blank" rel="noopener noreferrer nofollow" class="abstract-link">' + escapeHtml(match[1]) + '</a>';
       lastIndex = match.index + match[0].length;
     }
     result += linkifyBareUrls(text.slice(lastIndex));

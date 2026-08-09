@@ -1,5 +1,10 @@
 [
   {
+    "date": "2026/07",
+    "title": "第十届交通网络韧性国际研讨会（INSTR 2026）",
+    "body": "参加于法国里昂举办的第十届交通网络韧性国际研讨会（10th International Symposium on Transport Network Resilience, INSTR 2026），并报告研究工作《Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data》。报告 PDF 可[在线预览](https://drive.google.com/file/d/1gdPNoG5PYkeWxQwx_S9P8o-wscktkFaN/view?usp=sharing)。"
+  },
+  {
     "date": "2022/01",
     "title": "TRB 年会报告",
     "body": "101st Annual Meeting of Transportation Research Board, Washington DC. High-Resolution Queue Profile Estimation at Signalized Intersections Based on Extended Kalman Filter."
