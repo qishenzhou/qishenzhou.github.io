@@ -20,6 +20,11 @@
   ],
   "news": [
     {
+      "date": "2026/08",
+      "title": "Paper accepted",
+      "body": "Paper \"Leader-Type-Conditioned Memory Kernels for Interpretable Car-Following Response in Mixed Traffic\" accepted by Physica A: Statistical Mechanics and its Applications 🎉"
+    },
+    {
       "date": "2026/05/21",
       "title": "Paper accepted",
       "body": "Paper \"Digital Distortions: Auditing Bias in LLM-based Career Recommendations\" accepted by IEEE Intelligent Systems 🎉"

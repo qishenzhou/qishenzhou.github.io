@@ -491,6 +491,7 @@
       listEl.innerHTML = '';
       paperDetails.forEach(function (p, i) {
         if (p.entryType !== 'article') return;
+        if (!p.abstract_zh && !p.abstract_en) return;
         var thumbBlock = p.cover
           ? '<div class="paper-thumb"><img src="' + escapeHtml(p.cover) + '" alt="" /></div>'
           : '';
