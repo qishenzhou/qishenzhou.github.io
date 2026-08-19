@@ -424,7 +424,7 @@
   }
 
   function bibEntryToCiteBibtex(entry) {
-    var omit = { abstract: 1, url: 1, code: 1, cover: 1, corres: 1 };
+    var omit = { abstract: 1, url: 1, code: 1, cover: 1, corres: 1, featured: 1 };
     var lines = ['@' + entry.type + '{' + entry.key + ','];
     for (var k in entry.fields) {
       if (omit[k]) continue;
@@ -465,7 +465,8 @@
           cover: (f.cover || '').trim(),
           doi: (f.doi || '').toString().trim(),
           url: (f.url || '').trim(),
-          entryType: e.type.toLowerCase()
+          entryType: e.type.toLowerCase(),
+          featured: ((f.featured || '').toString().trim().toLowerCase() !== 'false')
         });
         paperBibtex.push(bibEntryToCiteBibtex(e));
         var url = (f.url || '').trim();
@@ -491,7 +492,7 @@
       listEl.innerHTML = '';
       paperDetails.forEach(function (p, i) {
         if (p.entryType !== 'article') return;
-        if (!p.abstract_zh && !p.abstract_en) return;
+        if (!p.featured) return;
         var thumbBlock = p.cover
           ? '<div class="paper-thumb"><img src="' + escapeHtml(p.cover) + '" alt="" /></div>'
           : '';
