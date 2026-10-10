@@ -24,6 +24,11 @@
   ],
   "news": [
     {
+      "date": "2026/10/08",
+      "title": "Paper accepted",
+      "body": "Paper \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" accepted by Transportation Research Part C: Emerging Technologies 🎉"
+    },
+    {
       "date": "2026/08/18",
       "title": "Paper accepted",
       "body": "Paper \"Leader-Type-Conditioned Memory Kernels for Interpretable Car-Following Response in Mixed Traffic\" accepted by Physica A: Statistical Mechanics and its Applications 🎉"
@@ -35,8 +40,8 @@
     },
     {
       "date": "2026/04/30",
-      "title": "Paper accepted",
-      "body": "Paper \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" accepted by the 10th International Symposium on Transport Network Resilience (INSTR 2026)! See you in Lyon 🎉"
+      "title": "Oral presentation",
+      "body": "Work \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" will be presented orally at the 10th International Symposium on Transport Network Resilience (INSTR 2026). See you in Lyon! 🎉"
     },
     {
       "date": "2026/04/14",
