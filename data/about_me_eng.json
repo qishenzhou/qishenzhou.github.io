@@ -24,6 +24,11 @@
   ],
   "news": [
     {
+      "date": "2026/10/10",
+      "title": "Paper accepted",
+      "body": "Paper \"Reconstructing Post-Earthquake Mobility with Temporal Gaussian Processes and OD Flow Structure\" accepted by the 4th ACM SIGSPATIAL International Workshop on Human Mobility Prediction 🎉"
+    },
+    {
       "date": "2026/10/08",
       "title": "Paper accepted",
       "body": "Paper \"Metropolis-Scale Resilient and Trustworthy Traffic Flow Inference Using Multi-Source Data\" accepted by Transportation Research Part C: Emerging Technologies 🎉"
