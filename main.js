@@ -784,6 +784,7 @@
           body_zh: nzi.body || '',
           body_en: nei.body || '',
           image: imgPath || '',
+          detail_image: (nei.detail_image || '').trim(),
           children: children
         });
       }
@@ -859,8 +860,19 @@
     toShow.forEach(function (n, i) {
       var art = document.createElement('article');
       art.className = 'timeline-item news-item';
+      if (n.detail_image) {
+        art.classList.add('detail-item');
+        art.setAttribute('data-detail-type', 'news');
+        art.setAttribute('data-detail-id', i);
+      }
       var imgBlock = n.image ? '<div class="timeline-image"><img src="' + escapeHtml(n.image) + '" alt="' + escapeHtml(n.title_zh || n.title_en) + '" /></div>' : '';
-      art.innerHTML = '<div class="timeline-head"><span class="timeline-date">' + escapeHtml(n.date) + '</span><span class="timeline-title lang-zh">' + escapeHtml(n.title_zh || '') + '</span><span class="timeline-title lang-en hidden">' + escapeHtml(n.title_en || '') + '</span></div><div class="timeline-content"><p class="lang-zh">' + escapeHtml(n.body_zh || n.title_zh) + '</p><p class="lang-en hidden">' + escapeHtml(n.body_en || n.title_en) + '</p></div>' + imgBlock;
+      art.innerHTML = '<div class="timeline-head"><span class="timeline-date">' + escapeHtml(n.date) + '</span><span class="timeline-title lang-zh">' + escapeHtml(n.title_zh || '') + '</span><span class="timeline-title lang-en hidden">' + escapeHtml(n.title_en || '') + '</span></div><div class="timeline-content"><p class="lang-zh">' + linkifyText(n.body_zh || n.title_zh) + '</p><p class="lang-en hidden">' + linkifyText(n.body_en || n.title_en) + '</p></div>' + imgBlock;
+      if (n.detail_image) {
+        var detailLink = document.createElement('a');
+        detailLink.href = '#news-' + i;
+        detailLink.innerHTML = '<span class="lang-zh">查看获奖证书 →</span><span class="lang-en hidden">View award certificate →</span>';
+        art.appendChild(detailLink);
+      }
       listEl.appendChild(art);
     });
     wrap.appendChild(listEl);
@@ -890,7 +902,8 @@
       var title = lang === 'zh' ? n.title_zh : n.title_en;
       var body = lang === 'zh' ? n.body_zh : n.body_en;
       var imgBlock = n.image ? '<div class="timeline-image"><img src="' + escapeHtml(n.image) + '" alt="' + escapeHtml(title) + '" /></div>' : '';
-      html += '<article class="news-full-item"><div class="news-full-head"><span class="news-full-date">' + escapeHtml(n.date) + '</span><h3 class="news-full-item-title">' + escapeHtml(title) + '</h3></div><p class="news-full-item-body">' + escapeHtml(body) + '</p>' + imgBlock + '</article>';
+      if (n.detail_image) imgBlock += '<p><a href="#news-' + i + '">' + (lang === 'zh' ? '查看获奖证书 →' : 'View award certificate →') + '</a></p>';
+      html += '<article class="news-full-item"><div class="news-full-head"><span class="news-full-date">' + escapeHtml(n.date) + '</span><h3 class="news-full-item-title">' + escapeHtml(title) + '</h3></div><p class="news-full-item-body">' + linkifyText(body) + '</p>' + imgBlock + '</article>';
     });
     html += '</div></div>';
     detailContent.innerHTML = html;
@@ -1123,7 +1136,10 @@
       var n = newsDetails[id];
       var nTitle = lang === 'zh' ? n.title_zh : n.title_en;
       var nBody = lang === 'zh' ? n.body_zh : n.body_en;
-      html = '<h2>' + escapeHtml(nTitle) + '</h2><p class="detail-meta">' + escapeHtml(n.date) + '</p><div class="detail-body">' + escapeHtml(nBody) + '</div>';
+      html = '<h2>' + escapeHtml(nTitle) + '</h2><p class="detail-meta">' + escapeHtml(n.date) + '</p><div class="detail-body">' + linkifyText(nBody) + '</div>';
+      if (n.detail_image) {
+        html += '<div class="timeline-image"><img src="' + escapeHtml(n.detail_image) + '" alt="' + (lang === 'zh' ? '获奖证书' : 'Award certificate') + '" /></div>';
+      }
       if (n.children && n.children.length > 0) {
         html += '<div class="detail-children"><h3 class="detail-children-title">' + (lang === 'zh' ? '更多详情' : 'More details') + '</h3><ul class="detail-children-list">';
         n.children.forEach(function (ch) {
@@ -1274,7 +1290,6 @@
   document.addEventListener('click', function (e) {
     var item = e.target.closest('.detail-item') || e.target.closest('.gallery-item');
     if (!item) return;
-    if (item.classList.contains('news-item')) return;
     if (item.querySelector('.paper-actions') && e.target.closest('.paper-actions')) return;
     if (item.querySelector('.citation-actions') && e.target.closest('.citation-actions')) return;
     var link = e.target.closest('a[href]');

@@ -24,9 +24,10 @@
   ],
   "news": [
     {
-      "date": "2026/10/10",
-      "title": "Paper accepted",
-      "body": "Paper \"Reconstructing Post-Earthquake Mobility with Temporal Gaussian Processes and OD Flow Structure\" accepted by the 4th ACM SIGSPATIAL International Workshop on Human Mobility Prediction 🎉"
+      "date": "2026/11/05",
+      "title": "1st prize",
+      "body": "Paper \"Reconstructing Post-Earthquake Mobility with Temporal Gaussian Processes and OD Flow Structure\" won 1st prize in the Human Mobility Prediction Challenge 2026 ([HuMob Challenge](https://takayabe0505.github.io/humob-2026/)). It was presented orally on site at the 4th ACM SIGSPATIAL International Workshop on Human Mobility Prediction, and accepted by the workshop. 🎉",
+      "detail_image": "images/news/humob-1st.jpg"
     },
     {
       "date": "2026/10/08",
